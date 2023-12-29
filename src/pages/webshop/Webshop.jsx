@@ -1,4 +1,5 @@
 function Webshop(){
-    return(<h1>Webshop</h1>)
+    return(
+        <h1>Webshop</h1>)
 }
 export default Webshop
