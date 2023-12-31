@@ -9,6 +9,7 @@ function Assortiment(){
         <div className='outer-container'>
             <div className='inner-container'>
                 <section className='center-page-container'>
+                    <div>
                     <article className='section-background assortiment-layout'>
                         <span className='assortiment-img'>
                             <img  src={pointerLogo} alt="Pointer logo"/>
@@ -74,6 +75,7 @@ function Assortiment(){
                         </p>
                         </div>
                     </article>
+                    </div>
                 </section>
             </div>
         </div>

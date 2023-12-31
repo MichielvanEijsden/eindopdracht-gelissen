@@ -1,0 +1,22 @@
+.about-us{
+    display: flex;
+}
+
+.about-us-left{
+    display: flex;
+    flex-direction: column;
+}
+.about-us-right{
+    display: flex;
+    flex-direction: column;
+}
+.default-text-link:hover{
+    color: red;
+    font-size:2rem;
+}
+
+.default-text-link {
+    color: #6ec1e4;
+    padding: 2rem;
+    font-size:2rem;
+}

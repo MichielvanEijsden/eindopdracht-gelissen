@@ -9,6 +9,10 @@ import AboutUs from './pages/about-us/AboutUs.jsx'
 import Footer from "./pages/footer/Footer.jsx";
 import Navigation from "./pages/navigation/Navigation.jsx";
 import Webshop from "./pages/webshop/Webshop.jsx";
+import Contact from "./pages/about-us/subpages/contact/Contact.jsx";
+import Privacy from "./pages/about-us/subpages/privacy policy/Privacy.jsx";
+import History from "./pages/about-us/subpages/history/History.jsx";
+import Impression from "./pages/about-us/subpages/impression/Impression.jsx";
 
 function App() {
 
@@ -24,6 +28,10 @@ function App() {
         <Route path='/Assortiment' element={<Assortiment />}/>
         <Route path='/Location' element={<Location />}/>
         <Route path='/About-us' element={<AboutUs />}/>
+        <Route path='/Contact' element={<Contact />}/>
+        <Route path='/History' element={<History/>}/>
+        <Route path='Impression' element={<Impression/>}/>
+        <Route path='Privacy-Policy' element={<Privacy/>}/>
       </Routes>
       <Footer/>
     </>
