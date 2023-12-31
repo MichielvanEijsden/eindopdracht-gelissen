@@ -13,6 +13,9 @@ import Contact from "./pages/about-us/subpages/contact/Contact.jsx";
 import Privacy from "./pages/about-us/subpages/privacy policy/Privacy.jsx";
 import History from "./pages/about-us/subpages/history/History.jsx";
 import Impression from "./pages/about-us/subpages/impression/Impression.jsx";
+import ErrorPage from "./pages/Errorpage/Errorpage.jsx";
+import Products from "./pages/products/Products.jsx";
+
 
 function App() {
 
@@ -25,6 +28,7 @@ function App() {
         <Route path='/' element={<Home />}/>
         {/*<Route path='/Occasions' element={<Occasions />}/>*/}
         <Route path='/Webshop' element={<Webshop />}/>
+        <Route path='/Product/:id' element={<Products/>}/>
         <Route path='/Assortiment' element={<Assortiment />}/>
         <Route path='/Location' element={<Location />}/>
         <Route path='/About-us' element={<AboutUs />}/>
@@ -32,6 +36,7 @@ function App() {
         <Route path='/History' element={<History/>}/>
         <Route path='Impression' element={<Impression/>}/>
         <Route path='Privacy-Policy' element={<Privacy/>}/>
+        <Route path="*" element={<ErrorPage/>}/>
       </Routes>
       <Footer/>
     </>

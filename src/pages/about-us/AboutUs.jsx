@@ -9,17 +9,21 @@ function AboutUs() {
                     <div className='center-page-container about-us'>
                         <div className='about-us-left'>
                             <section className='contact section-background'>
-                                <NavLink className={({isActive}) => isActive ? "active-text-link" : "default-text-link"} to='/Contact'>Onze contactgegevens</NavLink>
+                                <p>ICON</p>
+                               <NavLink className={({isActive}) => isActive ? "active-text-link" : "default-text-link"} to='/Contact'>Onze contactgegevens</NavLink>
                             </section>
                             <section className='history section-background'>
+                                <p>ICON</p>
                                 <NavLink className={({isActive}) => isActive ? "active-text-link" : "default-text-link"} to='/History'>Onze geschiedenis</NavLink>
                             </section>
                         </div>
                         <div className='about-us-right'>
                             <section className='impression section-background'>
+                                <p>ICON</p>
                                 <NavLink className={({isActive}) => isActive ? "active-text-link" : "default-text-link"} to='/Impression'>Impressie</NavLink>
                             </section>
                             <section className='privacy section-background'>
+                                <p>ICON</p>
                                 <NavLink className={({isActive}) => isActive ? "active-text-link" : "default-text-link"} to='/Privacy-Policy'>Privacy policy</NavLink>
                             </section>
                         </div>
