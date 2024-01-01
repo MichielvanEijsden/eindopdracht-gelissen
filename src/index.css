@@ -46,6 +46,7 @@ body {
   align-items: center;
   max-width: 85vw;
   flex-wrap: wrap;
+
 }
 
 ul, li{
@@ -69,6 +70,9 @@ ul, li{
 img{
   width: 100%;
   height: auto;
+}
+h1,h2,h3,h4{
+  color: #6ec1e4;
 }
 /* --------------- 4.x Footer ------------------------- */
 
