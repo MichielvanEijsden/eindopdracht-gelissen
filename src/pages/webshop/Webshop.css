@@ -12,7 +12,7 @@
     width: 40vw;
 }
 .product-text a,.product-price{
-    color: #6ec1e4;
+    color: var(--header-color);
 
 }
 .product-category{
@@ -23,4 +23,6 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    color: var(--text-color);
+    background-color: var(--btn-background);
 }

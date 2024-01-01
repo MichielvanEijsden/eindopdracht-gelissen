@@ -25,11 +25,19 @@ body {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  background-color: #1c1c1c;
+  background-color: var(--page-bg);
   font-family: 'Roboto', sans-serif;
-  color: #abb8c3;
+  color: var(--text-color);
 }
-
+:root{
+  --page-bg: #1c1c1c;
+  --text-color: #abb8c3;
+  --header-color: #6ec1e4;
+  --page-container: #333;
+  --inner-page-container: #414141;
+  --btn-background: red;
+  --nav-bg: black;
+}
 /* ------------------------------- 3. Layout --------------------------------------- */
 
 /* --------------- 3.1 Reusables ----------------------- */
@@ -46,16 +54,16 @@ body {
   align-items: center;
   max-width: 85vw;
   flex-wrap: wrap;
-
 }
 
 ul, li{
   list-style: none;
 }
+
 .center-page-container{
   display: flex;
   justify-content: center;
-  background-color: #333;
+  background-color: var(--page-container);
   padding: 2rem;
   margin: 5rem;
   border-radius: 2rem;
@@ -64,15 +72,16 @@ ul, li{
 .section-background{
   padding: 5px;
   margin: 5px;
-  color: #abb8c3;
-  background-color: #414141;
+  background-color: var(--inner-page-container);
 }
+
 img{
   width: 100%;
   height: auto;
 }
+
 h1,h2,h3,h4{
-  color: #6ec1e4;
+  color: var(--header-color);
 }
 /* --------------- 4.x Footer ------------------------- */
 
