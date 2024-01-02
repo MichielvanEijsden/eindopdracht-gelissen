@@ -15,6 +15,7 @@
 
 .homepage-container h1 {
     font-size: 3rem;
+    padding: 2rem;
 }
 
 .home-info-assortiment {
@@ -34,21 +35,20 @@
 .time-table-container {
     position: sticky;
     top: 0;
-    display: flex;
-    flex-direction: column;
     height: 80vh;
     margin-top: 5rem;
     margin-left: -4rem;
     margin-right: 4rem;
 }
-
+.time-table-container h2{
+    padding: 2rem;
+}
 .home-icon {
     width: 10rem;
     margin: 2rem;
 }
 
 .time-table {
-    display: flex;
     width: 26vw;
     padding: 2rem;
     flex-wrap: wrap;
@@ -57,7 +57,6 @@
 .day {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .time-table-text {
@@ -75,6 +74,9 @@
 
 
 @media (max-width: 700px) {
+    .page-container{
+        flex-direction: column;
+    }
     .homepage-container h1 {
         font-size: 1rem;
     }
@@ -98,6 +100,24 @@
     }
 
     .time-table-container {
-        display: none;
+        left: 10vw;
+        width: 80vw;
+        margin: -1rem;
+    }
+    .time-table{
+        width: 80vw;
+        display: flex;
+        padding: 0 2rem;
+    }
+    .time-table-text{
+        width: 20vw;
+    }
+    .day{
+        flex-direction: column;
+        margin: 0.5rem;
+    }
+    .time-table-text {
+        margin-bottom: 0.1rem;
+        padding: 1rem;
     }
 }

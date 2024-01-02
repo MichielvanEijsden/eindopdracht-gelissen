@@ -46,6 +46,7 @@ body {
   display: flex;
   justify-content: center;
   flex-shrink: 1;
+  position: relative;
 }
 
 .inner-container {

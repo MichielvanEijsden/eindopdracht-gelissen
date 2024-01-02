@@ -16,12 +16,12 @@ function Home() {
                             <div className='homepage-container'>
                                 <h1>!Nieuw! Ook bij ons mogelijk om te Leasen! </h1>
                                 <span>
-                            <img id='leaseFiets' src={leasefiets} alt='leasefiets-img'/>
-                            </span>
-                                <h1>Bikkel E-Bike ANWB Test **** sterren</h1>
+                                <img id='leaseFiets' src={leasefiets} alt='leasefiets-img'/>
+                                </span>
+                                    <h1>Bikkel E-Bike ANWB Test **** sterren</h1>
                                 <span>
-                            gallery here
-                        </span>
+                                gallery here
+                                </span>
 
                                 <div className='home-info-assortiment'>
                                     <Link to='/Webshop'>
@@ -45,8 +45,6 @@ function Home() {
                                         op de
                                         knop voor de locatie van de werkplaats.</p>
                                 </div>
-
-
                             </div>
                         </section>
                     </div>
@@ -55,7 +53,6 @@ function Home() {
                     <div id='time-table'>
                         <h2>Openingstijden</h2>
                         <div className='time-table'>
-
                             <div className='day'>
                                 <div className='time-table-text'><p>Maandag</p></div>
                                 <div className='time-table-text'><p>09:00-18:00</p></div>
@@ -84,14 +81,10 @@ function Home() {
                                 <div className='time-table-text'><p>Zondag</p></div>
                                 <div className='time-table-text'><p>Gesloten</p></div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </>
     )
 }
