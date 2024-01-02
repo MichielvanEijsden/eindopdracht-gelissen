@@ -1,0 +1,7 @@
+.footer-bar{
+    display: flex;
+    justify-content: center;
+    background-color: green;
+    width: 80vw;
+    height: 10vh;
+}
