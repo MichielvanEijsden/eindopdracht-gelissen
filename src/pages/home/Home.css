@@ -4,7 +4,7 @@
     justify-content: center;
     text-align: center;
 }
-.homepage-container > img{
+#leaseFiets{
     width: 40vw;
 }
 .homepage-container h1{
@@ -34,17 +34,22 @@
 }
 .time-table{
     display: flex;
-    width: 20vw;
-    padding: 1rem;
+    width: 26vw;
+    padding: 2rem;
     flex-wrap: wrap;
 }
+.day{
+    display: flex;
+    flex-wrap: wrap;
 
+}
 .time-table-text{
     display: flex;
-    padding: 1rem 3.5rem 1rem 1rem;
+    padding: 1rem 5rem 1rem 1rem;
     margin-bottom: 1rem;
     font-size: 20px;
     background-color: #415050;
+    width: 11vw;
 }
 .page-container{
     display: flex;
@@ -53,6 +58,5 @@
     background-color: var(--page-container);
 }
 .home-icon{
-    width: 20px;
-    background-color: #6ec1e4;
+    width: 10rem;
 }

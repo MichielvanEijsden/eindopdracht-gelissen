@@ -6,10 +6,10 @@ function Header() {
     return (
         <>
             <header>
-                <div className="outer-container">
-                    <div className="inner-container">
-                <span className="header-image">
-                    <img src={header_img} alt="logo Gelissen"/>
+                <div className='outer-container'>
+                    <div className='inner-container'>
+                <span>
+                    <img className='header-image' src={header_img} alt='logo Gelissen'/>
                 </span>
                     </div>
                 </div>
