@@ -16,17 +16,17 @@ function Home() {
                         <div className='homepage-container'>
                             <h1>!Nieuw! Ook bij ons mogelijk om te Leasen! </h1>
                             <span>
-                    <img src={leasefiets} alt='leasefiets-img'/>
-                    </span>
+                            <img src={leasefiets} alt='leasefiets-img'/>
+                            </span>
                             <h1>Bikkel E-Bike ANWB Test **** sterren</h1>
                             <span>
                             gallery here
                         </span>
-                            <img className='home-icon' src={bikeIcon} alt='bike icon'/>
+
                             <div className='home-info-assortiment'>
 
                                 <Link to='/Webshop'>
-
+                                    <img className='home-icon' src={bikeIcon} alt='bike icon'/>
                                 </Link>
                                 <p>Wij hebben een ruim assortiment aan nieuwe stadsfietsen en elektrische-fietsen
                                     (E-bikes)
