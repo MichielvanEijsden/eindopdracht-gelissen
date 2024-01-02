@@ -47,11 +47,10 @@ function Webshop() {
                                                     <p>{items.description}</p>
                                                     <p className='product-price'>€ {items.price}</p>
                                                 </div>
-                                                    <svg viewBox="10 10 100 100" style={{ fill: 'green' }}></svg>
 
                                                     <span>
 
-                                                        <button className='btn-cart' type='button'><img className='cart-icon' src={<Basket/>} alt='shoppingcart'/></button>
+                                                        <button className='btn-cart' type='button'><img className='cart-icon' src={basket} alt='shoppingcart'/></button>
                                                         </span>
                                             </div>
                                             </div>
