@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     text-align: center;
-
 }
 
 .about-us-left{
@@ -44,7 +43,9 @@
         width: 50vw;
     }
     .height{
-        height: 15vh;
+        height: 175px;
     }
-
+    .default-text-link{
+        font-size: 20px;
+    }
 }
