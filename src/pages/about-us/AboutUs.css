@@ -2,19 +2,21 @@
     display: flex;
     align-items: center;
     text-align: center;
+
 }
 
 .about-us-left{
     display: flex;
     flex-direction: column;
     width: 25vw;
-
 }
 .about-us-right{
     display: flex;
     flex-direction: column;
     width: 25vw;
-
+}
+.height{
+    height: 20vh;
 }
 .default-text-link:hover{
     color: red;
@@ -23,11 +25,26 @@
 
 .default-text-link {
     color: #6ec1e4;
-    padding: 2rem;
     font-size:2rem;
 }
 .icon{
     width: 5rem;
-    margin: 10px;
+    margin: 1rem;
     background-color: #6ec1e4;
+}
+
+@media (max-width: 700px) {
+    .about-us {
+       flex-direction: column;
+    }
+    .about-us-left{
+        width: 50vw;
+    }
+    .about-us-right{
+        width: 50vw;
+    }
+    .height{
+        height: 15vh;
+    }
+
 }

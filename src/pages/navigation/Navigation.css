@@ -97,6 +97,7 @@
     }
     .nav-bar{
         justify-content: flex-start;
+        z-index: 1;
     }
     .nav-bar-menu{
         position: absolute;

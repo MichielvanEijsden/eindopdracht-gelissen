@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import basket from '../../assets/cart-shopping-solid.svg'
+
 // import Basket from "../../components/Basket.jsx";
 
 function Webshop() {
@@ -30,7 +31,7 @@ function Webshop() {
             <div className='outer-container'>
                 <div className='inner-container'>
                     <section className='center-page-container'>
-                            <div>
+                        <div>
                             <h2>welcome to the Webshop</h2>
                             <ul>
                                 {allItems.map((items) => {
@@ -38,27 +39,28 @@ function Webshop() {
                                         <li key={items.id}>
                                             <div className='section-background'>
                                                 <div className='product-info '>
-                                                <span className='product-img'>
-                                                <img src={items.image} alt={items.title}/>
+                                                <span>
+                                                <img className='product-img' src={items.image} alt={items.title}/>
                                                 </span>
-                                                <div className='product-text'>
-                                                    <h3><Link to={`/Product/${items.id}`}>{items.title}</Link></h3>
-                                                    <p className='product-category'>{items.category}</p>
-                                                    <p>{items.description}</p>
-                                                    <p className='product-price'>€ {items.price}</p>
-                                                </div>
+                                                    <div className='product-text'>
+                                                        <h3><Link to={`/Product/${items.id}`}>{items.title}</Link></h3>
+                                                        <p className='product-category'>{items.category}</p>
+                                                        <p>{items.description}</p>
+                                                        <p className='product-price'>€ {items.price}</p>
+                                                    </div>
 
                                                     <span>
-
-                                                        <button className='btn-cart' type='button'><img className='cart-icon' src={basket} alt='shoppingcart'/></button>
-                                                        </span>
-                                            </div>
+                                                        <button className='btn-cart' type='button'><img
+                                                            className='cart-icon' src={basket}
+                                                            alt='shoppingcart'/></button>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </li>
                                     )
                                 })}
                             </ul>
-                            </div>
+                        </div>
                     </section>
                 </div>
             </div>
