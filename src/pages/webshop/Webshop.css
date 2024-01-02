@@ -1,5 +1,5 @@
 .product-img{
-    max-width:10rem;
+    max-width:6rem;
     margin-right: 3rem;
 }
 .product-info{
@@ -15,22 +15,23 @@
     color: var(--header-color);
 
 }
+.product-price{
+    margin-top: 2rem;
+}
 .product-category{
     color: #1c1c1c;
     padding:1rem 0;
 }
 .btn-cart{
     position: absolute;
-    bottom: 0;
+    bottom: -2rem;
     right: 0;
     color: var(--text-color);
     background-color: var(--btn-background);
-    width: 2rem;
+    border: none;
+    width: 3rem;
+    height: 3rem;
 }
 .cart-icon{
-
-}
-svg {
-    stroke: #f30ee4;
-
+    width: 2rem;
 }

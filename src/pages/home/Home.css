@@ -1,58 +1,123 @@
-.homepage-container{
+.page-container {
+    display: flex;
+}
+
+.homepage-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 }
-.homepage-container > img{
+
+#leaseFiets {
     width: 40vw;
 }
-.homepage-container h1{
-    font-size: 40px;
+
+.homepage-container h1 {
+    font-size: 3rem;
+    padding: 2rem;
 }
-.home-info-assortiment{
+
+.home-info-assortiment {
     display: flex;
     text-align: left;
     padding: 2rem;
     background-color: #3e6559;
 }
-.home-info-werkplaats{
+
+.home-info-werkplaats {
     display: flex;
     text-align: left;
     padding: 2rem;
-    background-color:#457975;
+    background-color: #457975;
 }
-.time-table-container{
+
+.time-table-container {
     position: sticky;
     top: 0;
-    display: flex;
-    flex-direction: column;
     height: 80vh;
     margin-top: 5rem;
     margin-left: -4rem;
     margin-right: 4rem;
 }
-.time-table{
-    display: flex;
-    width: 20vw;
-    padding: 1rem;
+.time-table-container h2{
+    padding: 2rem;
+}
+.home-icon {
+    width: 10rem;
+    margin: 2rem;
+}
+
+.time-table {
+    width: 26vw;
+    padding: 2rem;
     flex-wrap: wrap;
 }
 
-.time-table-text{
+.day {
     display: flex;
-    padding: 1rem 3.5rem 1rem 1rem;
+    flex-wrap: wrap;
+}
+
+.time-table-text {
+    display: flex;
+    padding: 1rem 5rem 1rem 1rem;
     margin-bottom: 1rem;
     font-size: 20px;
     background-color: #415050;
+    width: 11vw;
 }
-.page-container{
-    display: flex;
-}
-#time-table{
+
+#time-table {
     background-color: var(--page-container);
 }
-.home-icon{
-    width: 20px;
-    background-color: #6ec1e4;
+
+
+@media (max-width: 700px) {
+    .page-container{
+        flex-direction: column;
+    }
+    .homepage-container h1 {
+        font-size: 1rem;
+    }
+
+    #leaseFiets {
+        width: 50vw;
+    }
+
+    .home-info-werkplaats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-info-assortiment {
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-icon{
+        width: 5rem;
+        margin: 1rem;
+    }
+
+    .time-table-container {
+        left: 10vw;
+        width: 80vw;
+        margin: -1rem;
+    }
+    .time-table{
+        width: 80vw;
+        display: flex;
+        padding: 0 2rem;
+    }
+    .time-table-text{
+        width: 20vw;
+    }
+    .day{
+        flex-direction: column;
+        margin: 0.5rem;
+    }
+    .time-table-text {
+        margin-bottom: 0.1rem;
+        padding: 1rem;
+    }
 }

@@ -46,6 +46,7 @@ body {
   display: flex;
   justify-content: center;
   flex-shrink: 1;
+  position: relative;
 }
 
 .inner-container {
@@ -75,15 +76,14 @@ ul, li{
   background-color: var(--inner-page-container);
 }
 
-img{
-  width: 100%;
-  height: auto;
-}
-
 h1,h2,h3,h4{
   color: var(--header-color);
 }
-
+@media (max-width: 700px) {
+  .center-page-container{
+    margin:2rem 0.5rem;
+  }
+}
 /* --------------- 4.x Footer ------------------------- */
 
 footer{
