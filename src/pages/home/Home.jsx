@@ -1,6 +1,8 @@
 import './Home.css'
 import leasefiets from '../../assets/LF.Logo-links-boven-FC-L-768x270.jpg'
 import {Link} from "react-router-dom";
+import gearIcon from '../../assets/gear-solid.svg'
+import bikeIcon from '../../assets/person-biking-solid.svg'
 
 
 function Home() {
@@ -20,8 +22,12 @@ function Home() {
                             <span>
                             gallery here
                         </span>
+                            <img className='home-icon' src={bikeIcon} alt='bike icon'/>
                             <div className='home-info-assortiment'>
-                                <Link to='/Webshop'>ICON</Link>
+
+                                <Link to='/Webshop'>
+
+                                </Link>
                                 <p>Wij hebben een ruim assortiment aan nieuwe stadsfietsen en elektrische-fietsen
                                     (E-bikes)
                                     van verschillende merken. Als u meer wilt weten over een aantal van de door ons
@@ -29,7 +35,9 @@ function Home() {
                                     merken, klik dan op de knop of op deze pagina.</p>
                             </div>
                             <div className='home-info-werkplaats' >
-                               <Link to='/Location'>ICON</Link>
+                               <Link to='/Location'>
+                                   <img className='home-icon' src={gearIcon} alt='gear icon'/>
+                               </Link>
                                 <p>Wij beschikken over een eigen werkplaats voor onderhoud en reparatie. Hier wordt met
                                     veel
                                     ervaring, kennis en precisie aan uw fiets wordt gewerkt. Kijk op deze pagina of klik

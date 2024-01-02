@@ -2,6 +2,8 @@ import './Webshop.css'
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import basket from '../../assets/cart-shopping-solid.svg'
+// import Basket from "../../components/Basket.jsx";
 
 function Webshop() {
     const [allItems, setAllItems] = useState([])
@@ -45,8 +47,11 @@ function Webshop() {
                                                     <p>{items.description}</p>
                                                     <p className='product-price'>€ {items.price}</p>
                                                 </div>
+                                                    <svg viewBox="10 10 100 100" style={{ fill: 'green' }}></svg>
+
                                                     <span>
-                                                    <button className='btn-cart' type='button'>add to cart</button>
+
+                                                        <button className='btn-cart' type='button'><img className='cart-icon' src={<Basket/>} alt='shoppingcart'/></button>
                                                         </span>
                                             </div>
                                             </div>

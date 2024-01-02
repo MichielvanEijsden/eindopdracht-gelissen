@@ -25,4 +25,12 @@
     right: 0;
     color: var(--text-color);
     background-color: var(--btn-background);
+    width: 2rem;
+}
+.cart-icon{
+
+}
+svg {
+    stroke: #f30ee4;
+
 }

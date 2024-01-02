@@ -52,3 +52,7 @@
 #time-table{
     background-color: var(--page-container);
 }
+.home-icon{
+    width: 2px;
+    background-color: #6ec1e4;
+}
