@@ -1,0 +1,33 @@
+.about-us{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.about-us-left{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+
+}
+.about-us-right{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+
+}
+.default-text-link:hover{
+    color: red;
+    font-size:2rem;
+}
+
+.default-text-link {
+    color: #6ec1e4;
+    padding: 2rem;
+    font-size:2rem;
+}
+.icon{
+    width: 5rem;
+    margin: 10px;
+    background-color: #6ec1e4;
+}

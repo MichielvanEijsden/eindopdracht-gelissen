@@ -1,0 +1,29 @@
+.assortiment-layout{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.assortiment-layout-reverse{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+.assortiment-img{
+    flex-basis: 10vw;
+    margin: 2rem;
+}
+
+.assortiment-text{
+    flex-basis: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 25px;
+    margin: 2rem;
+}
+.assortiment-header {
+    color: black;
+    margin: 10px 0;
+    align-items: center;
+}
