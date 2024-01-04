@@ -29,8 +29,8 @@
 .icon{
     width: 5rem;
     margin: 1rem;
-    background-color: #6ec1e4;
 }
+
 
 @media (max-width: 700px) {
     .about-us {

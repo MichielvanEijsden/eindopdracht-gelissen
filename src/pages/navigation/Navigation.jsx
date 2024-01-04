@@ -1,5 +1,6 @@
 import './Navigation.css'
 import {NavLink} from "react-router-dom";
+import basket from '../../assets/cart-shopping-solid.svg'
 
 function Navigation() {
     return (
@@ -28,6 +29,10 @@ function Navigation() {
                         <li><NavLink className={({isActive}) => isActive ? "active-link" : "default-link"}
                                      to='/About-Us'>Over
                             ons</NavLink></li>
+                        <li><NavLink className={({isActive}) => isActive ? "active-link" : "default-link"}
+                                     to='/Cart/'><img src={basket} alt='shopping cart'/></NavLink></li>
+                        <li><NavLink className={({isActive}) => isActive ? "active-link" : "default-link"}
+                                     to='/Login'>Login</NavLink></li>
 
                     </ul>
                 </nav>

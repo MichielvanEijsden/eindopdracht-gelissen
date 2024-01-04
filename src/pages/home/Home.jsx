@@ -27,7 +27,7 @@ function Home() {
                                     <Link to='/Webshop'>
                                         <img className='home-icon' src={bikeIcon} alt='bike icon'/>
                                     </Link>
-                                    <p>Wij hebben een ruim assortiment aan nieuwe stadsfietsen en elektrische-fietsen
+                                    <p className='home-info'>Wij hebben een ruim assortiment aan nieuwe stadsfietsen en elektrische-fietsen
                                         (E-bikes)
                                         van verschillende merken. Als u meer wilt weten over een aantal van de door ons
                                         aangeboden
@@ -37,7 +37,7 @@ function Home() {
                                     <Link to='/Location'>
                                         <img className='home-icon' src={gearIcon} alt='gear icon'/>
                                     </Link>
-                                    <p>Wij beschikken over een eigen werkplaats voor onderhoud en reparatie. Hier wordt
+                                    <p className='home-info' >Wij beschikken over een eigen werkplaats voor onderhoud en reparatie. Hier wordt
                                         met
                                         veel
                                         ervaring, kennis en precisie aan uw fiets wordt gewerkt. Kijk op deze pagina of

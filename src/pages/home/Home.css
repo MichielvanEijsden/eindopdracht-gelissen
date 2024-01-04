@@ -23,6 +23,7 @@
     text-align: left;
     padding: 2rem;
     background-color: #3e6559;
+    align-items: center;
 }
 
 .home-info-werkplaats {
@@ -30,6 +31,14 @@
     text-align: left;
     padding: 2rem;
     background-color: #457975;
+    align-items: center;
+}
+.home-icon {
+    width: 10rem;
+    margin: 2rem;
+}
+.home-info{
+    font-size: 25px;
 }
 
 .time-table-container {
@@ -43,10 +52,7 @@
 .time-table-container h2{
     padding: 2rem;
 }
-.home-icon {
-    width: 10rem;
-    margin: 2rem;
-}
+
 
 .time-table {
     width: 26vw;
