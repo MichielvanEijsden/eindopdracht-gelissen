@@ -1,19 +1,28 @@
-
-function Contact(){
-    return(
+import './Contact.css'
+function Contact() {
+    return (
         <>
-            Gelissen Tweewielers VOF
+            <div className='outer-container'>
+                <div className='inner-container'>
+                    <div className='center-page-container'>
+                        <div className='contact-wrapper'>
+                            <h2>Gelissen Tweewielers VOF</h2>
 
-            Heirstraat 2A
+                            <p>Heirstraat 2A</p>
 
-            6191JT Beek
+                            <p>6191JT Beek</p>
 
-            046 – 437 16 76
+                            <p>046 – 437 16 76</p>
 
-            info@gelissentweewielers.nl
+                            <p>info@gelissentweewielers.nl</p>
 
-            KVK: 14013476
+                            <p>KVK: 14013476</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
+
 export default Contact

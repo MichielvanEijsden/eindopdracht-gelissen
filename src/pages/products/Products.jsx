@@ -7,6 +7,7 @@ function Products() {
     const [oneProduct, setOneProduct] = useState([])
     const [error, setError] = useState()
 
+
     async function fetchProducts() {
         try {
             const result = await axios.get(url)
@@ -32,8 +33,8 @@ function Products() {
                         <li key={oneProduct.id}>
                             <div className='section-background'>
                                 <div className='product-info '>
-                                    <span className='product-img'>
-                                        <img src={oneProduct.image} alt={oneProduct.title}/>
+                                    <span>
+                                        <img  className='product-img' src={oneProduct.image} alt={oneProduct.title}/>
                                     </span>
                                     <div className='product-text'>
                                         <h3>{oneProduct.title}</h3>

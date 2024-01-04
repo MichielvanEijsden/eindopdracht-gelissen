@@ -1,0 +1,17 @@
+.location-container{
+    display: flex;
+    flex-direction: column;
+
+}
+.location-text-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+.location-text{
+    width: 50%;
+    font-size: 20px;
+}
+.map{
+    width: 100%;
+    margin-top: 40px;
+}

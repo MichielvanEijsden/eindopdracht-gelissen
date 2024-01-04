@@ -1,0 +1,24 @@
+.history-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    font-size: 20px;
+}
+.history-wrapper p{
+    margin: 20px 0;
+
+}
+.history-center{
+    text-align: center;
+}
+.bike-icon{
+    margin-right: 10px;
+    width: 30px;
+}
+.history-list > li{
+    list-style: disc;
+    margin-bottom: 10px;
+}
+.history-list{
+    margin:20px 0 20px 50px;
+}
