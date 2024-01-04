@@ -1,0 +1,6 @@
+.contact-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    line-height: 50px;
+}
