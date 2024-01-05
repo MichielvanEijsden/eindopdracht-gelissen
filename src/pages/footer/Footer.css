@@ -18,3 +18,13 @@ footer {
     text-align: right;
     margin-right: 5rem;
 }
+
+@media (max-width: 700px) {
+ .fb-icon{
+     margin: 1rem;
+ }
+    .footer-text{
+        margin: 1rem;
+        font-size: 12px;
+    }
+}

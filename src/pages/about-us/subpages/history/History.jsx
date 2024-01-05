@@ -19,7 +19,7 @@ function History() {
                                 daarbij kwam kijken. 19 jaar lang runt hij deze zaak samen met z’n gezin.</p>
 
                             <p>Fietsen was Heins lust en leven. Hein nam deel aan verschillende
-                                (amateur)wielerwedstrijden
+                                (amateur) wielerwedstrijden
                                 en was regelmatig op het podium te vinden. Zoals:</p>
                             <ul>
                                 <li><p><img className='bike-icon' src={bike} alt='bike-icon'/> 3e plek in de Ronde van Limburg (1950)</p></li>
@@ -29,7 +29,7 @@ function History() {
                                 <li><p><img className='bike-icon' src={bike} alt='bike-icon'/> 2e plek in Krefeld Duitsland (1955)</p></li>
                             </ul>
                             <div className='history-center'>
-                                <img src={Hein} alt='Hein Gelissen'/>
+                                <img className='history-img' src={Hein} alt='Hein Gelissen'/>
                                 <p> Hein Gelissen</p>
                                 <h2>1953</h2>
                                 <p>Jaar van oprichting</p>
