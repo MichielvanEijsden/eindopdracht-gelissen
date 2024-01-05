@@ -3,6 +3,7 @@
     flex-direction: row;
     align-items: center;
     background-color: var(--nav-bg);
+    position: relative;
 }
 
 .nav-bar {
@@ -25,7 +26,7 @@
     background-color: var(--btn-background);
     padding: 1rem;
     transition: all 0.3s ease-in-out;
-    font-size:1em;
+    font-size:1rem;
 }
 
 .default-link {
@@ -33,6 +34,18 @@
     text-transform: uppercase;
     padding: 1rem;
     text-decoration: none;
+}
+.subMenu-aboutUs-clicked{
+    display: none;
+}
+.subMenu-aboutUs{
+    position: absolute;
+    top:48px;
+    background:var(--nav-bg);
+    z-index: 1;
+}
+.subMenu-aboutUs > li{
+    padding: 1rem 0;
 }
 
 /*Container for menu button  */
@@ -46,85 +59,44 @@
     align-items: center;
 }
 
-#nav-toggle {
-    display: none;
-}
 
-/*  Creating the menu button */
-.nav-button,
-.nav-button::before,
-.nav-button::after {
-    display: block;
-    background-color: var(--btn-background);
-    position: absolute;
-    height: 6px;
-    width: 32px;
-    border-radius: 3px;
-}
-
-.nav-button::before {
-    content: '';
-    margin-top: -8px;
-}
-
-.nav-button::after {
-    content: '';
-    margin-top: 8px;
-}
-/*  Adding Functionality to the Hamburger Menu with CSS  */
-#nav-toggle:checked + .nav-button-container .nav-button::before {
-    margin-top: 0;
-    transform: rotate(45deg);
-}
-
-#nav-toggle:checked + .nav-button-container .nav-button {
-    background: rgba(255, 255, 255, 0);
-}
-
-#nav-toggle:checked + .nav-button-container .nav-button::after {
-    margin-top: 0;
-    /*  transforms the hamburger icon into a cross  */
-    transform: rotate(-45deg);
-}
 /* Making the navbar responsive by CSS Media Queries */
 @media (max-width: 700px) {
+    .nav{
+        justify-content: left;
+        position: relative;
+    }
     .nav-button-container {
+        position: absolute;
         display: flex;
         padding: 0 30px;
     }
-    .nav{
-        position: relative;
+    .nav-bar-menu{
+        display: none;
+    }
+    .nav-button-img{
+        width: 25px;
     }
     .nav-bar{
         justify-content: flex-start;
         z-index: 1;
     }
-    .nav-bar-menu{
+    .dropdown-menu{
         position: absolute;
         top: 45px;
         left: 0;
-        flex-direction: column;
-        align-items: flex-start;
         background:var(--nav-bg);
     }
-    .nav-bar > ul > li {
-        overflow: hidden;
+    .dropdown-menu > li{
+        height: 2.5rem;
+        padding: 1.5rem;
     }
-    #nav-toggle ~ .nav-bar li {
-        height: 0;
-        margin: 0;
-        padding: 0;
-        border: 0;
-    }
-    #nav-toggle:checked ~ .nav-bar li {
-        height: 2.5em;
-        padding: 1em;
-    }
-    .nav-bar > li {
-        display: flex;
-        justify-content: flex-start;
-        margin: 0;
-        padding: 0.5em 0;
-        width: 100%;
+    .subMenu-aboutUs{
+        position: absolute;
+        width: 50vw;
+        top: 200px;
+        left: 185px;
+        background:var(--nav-bg);
+        z-index: 1;
     }
 }

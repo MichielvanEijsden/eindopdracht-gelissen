@@ -1,0 +1,25 @@
+.privacy-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    font-size: 20px;
+}
+.privacy-wrapper > h2{
+    color: #7A7A7A;
+}
+.privacy-wrapper p{
+    margin: 20px 0;
+}
+.privacy-list{
+    margin:20px 0 20px 50px;
+}
+.privacy-list >li{
+    list-style: disc;
+    margin-bottom: 10px;
+    color: #7A7A7A;
+}
+@media (max-width: 700px) {
+    .privacy-list{
+        margin:20px 0 20px 10px;
+    }
+}
