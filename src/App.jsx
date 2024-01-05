@@ -13,7 +13,7 @@ import Contact from "./pages/about-us/subpages/contact/Contact.jsx";
 import Privacy from "./pages/about-us/subpages/privacy policy/Privacy.jsx";
 import History from "./pages/about-us/subpages/history/History.jsx";
 import Impression from "./pages/about-us/subpages/impression/Impression.jsx";
-// import ErrorPage from "./pages/Errorpage/Errorpage.jsx";
+import ErrorPage from "./pages/Errorpage/Errorpage.jsx";
 import Products from "./pages/products/Products.jsx";
 import Cart from "./pages/cart/Cart.jsx";
 import Login from "./pages/login/login.jsx";
@@ -40,7 +40,7 @@ function App() {
         <Route path='/Privacy-Policy' element={<Privacy/>}/>
         <Route path='/Cart/' element={<Cart/>}/>
         <Route path='/Login' element={<Login/>}/>
-        {/*<Route path="*" element={<ErrorPage/>}/>*/}
+        <Route path="*" element={<ErrorPage/>}/>
       </Routes>
       <Footer/>
     </>

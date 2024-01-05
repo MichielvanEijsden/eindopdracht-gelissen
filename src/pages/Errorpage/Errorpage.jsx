@@ -9,7 +9,7 @@ function ErrorPage(){
                 <h1>404</h1>
                 <h2>De pagina waar je naar zoekt bestaat niet</h2>
                 <span>
-                    <button type="button" onClick={() => navigate('/Webshop')}>Terug naar webshop</button>
+                    <button type="button" onClick={() => navigate(-1)}>Ga Terug</button>
                 </span>
             </div>
         </section>
