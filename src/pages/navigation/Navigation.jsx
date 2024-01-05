@@ -42,10 +42,10 @@ function Navigation() {
     const SubMenu =() =>(
         <>
             <ul className={subMenu ? 'subMenu-aboutUs':'subMenu-aboutUs-clicked'} >
-            <li><NavLink className={({isActive}) => isActive ? "active-link" : "default-link"} to='/Contact' onClick={() => setSubMenu(false)} >Contactgegevens</NavLink></li>
-            <li><NavLink className={({isActive}) => isActive ? "active-link" : "default-link"} to='/History' onClick={() => setSubMenu(false)} >Onze geschiedenis</NavLink></li>
-            <li><NavLink className={({isActive}) => isActive ? "active-link" : "default-link"} to='/Impression' onClick={() => setSubMenu(false)} >Impressie</NavLink></li>
-            <li><NavLink className={({isActive}) => isActive ? "active-link" : "default-link"} to='/Privacy-policy' onClick={() => setSubMenu(false)} >Privacy policy</NavLink></li>
+            <li><NavLink className={({isActive}) => isActive ? "active-link" : "default-link"} to='/Contact' onClick={() => setSubMenu(false) & setToggleMenu(false)} >Contactgegevens</NavLink></li>
+            <li><NavLink className={({isActive}) => isActive ? "active-link" : "default-link"} to='/History' onClick={() => setSubMenu(false) & setToggleMenu(false)} >Onze geschiedenis</NavLink></li>
+            <li><NavLink className={({isActive}) => isActive ? "active-link" : "default-link"} to='/Impression' onClick={() => setSubMenu(false) & setToggleMenu(false)} >Impressie</NavLink></li>
+            <li><NavLink className={({isActive}) => isActive ? "active-link" : "default-link"} to='/Privacy-policy' onClick={() => setSubMenu(false) & setToggleMenu(false)} >Privacy policy</NavLink></li>
             </ul>
 
             </>
