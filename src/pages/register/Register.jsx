@@ -1,28 +1,25 @@
-import './login.css'
+import './Register.css'
+import {useForm} from "react-hook-form";
+import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
 import axios from "axios";
-import {useForm} from "react-hook-form";
-import {Link, useNavigate} from 'react-router-dom';
 
-function Login() {
+function Register() {
     const {register, handleSubmit, formState: {errors}} = useForm()
     const navigate = useNavigate()
     const [error, setError] = useState()
     const [token, setToken] = useState()
 
-
     async function handleFormSubmit(data) {
         try {
-            const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/login', {
-               header: {
-               "Content-Type": "application/json",
-               },
-            ...data,
+            const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signup', {
+                ...data,
+                role:['user','MODERATOR']
             })
             console.log(response.data)
             setToken(response.data.token)
         } catch (e) {
-            setError(e)
+            setError(e.response.data.message)
             console.error(error);
         }
         // navigate(-1)
@@ -36,6 +33,8 @@ function Login() {
                     <section className='center-page-container'>
                         <div>
                             <form className='login-container' onSubmit={handleSubmit(handleFormSubmit)}>
+
+                                {error}
                                 <label>Username:</label>
                                 <input type='text' {...register('username', {
                                     required: {
@@ -43,33 +42,34 @@ function Login() {
                                         message: 'vul je username in'
                                     }
                                 })}/>
-                               <p>{errors.username && <p className='login-error-message'>{errors.username.message}</p>}</p>
+                                {errors.username && <p className='login-error-message'>{errors.username.message}</p>}
                                 <label>Password:</label>
                                 <input type='password' {...register('password', {
+                                    minLength:{value: 6,message: 'wachtwoord moet minimaal 6 characters lang zijn'},
                                     required: {
                                         value: true,
                                         message: 'vul je wachtwoord in'
                                     }
                                 })} />
-                                <p>{errors.password && <p className='login-error-message'>{errors.password.message}</p>}</p>
-                                <button className='login-btn' type='submit'>Login</button>
+                                {errors.password && <p className='login-error-message'>{errors.password.message}</p>}
+                                <label>Email:</label>
+                                <input type='text' {...register('email', {
+                                    required: {
+                                        value: true,
+                                        message: 'vul je wachtwoord in',
+                                    },
+                                    validate :(value)=> value.includes('@') ||'Email moet een @ bevatten',
+                                })} />
+                                {errors.email && <p className='login-error-message'>{errors.email.message}</p>}
+
+                                <button className='login-btn' type='submit'>Registreer</button>
                             </form>
-                            <div className='register'>
-                            <p>of</p>
-                                <Link to='/Register'>
-                            <button className='register-btn'>Registreer </button>
-                                </Link>
-                            </div>
+
                         </div>
                     </section>
                 </div>
             </div>
-
-
-        </>
+            </>
     )
-
-
 }
-
-export default Login
+export default Register

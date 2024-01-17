@@ -1,26 +1,36 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import basket from "../../assets/cart-shopping-solid.svg";
 
 function Products() {
     const {id} = useParams()
     const [oneProduct, setOneProduct] = useState([])
-    const [error, setError] = useState()
+    const [loading, toggleLoading] = useState(false);
+    const [error, setError] = useState(false)
 
-
+    useEffect(() => {
+        const controller = new AbortController();
     async function fetchProducts() {
+        toggleLoading(true);
+        setError(false);
         try {
             const result = await axios.get(url)
             console.log(result.data)
             setOneProduct(result.data)
         } catch (e) {
-            setError(e)
+            setError(true)
             console.log(error)
+        } finally {
+            toggleLoading(false)
         }
     }
 
-    useEffect(() => {
-        fetchProducts()
+    fetchProducts()
+
+        return function cleanup() {
+            controller.abort();
+        }
     }, []);
 
     const url = 'https://fakestoreapi.com/products/' + id
@@ -43,7 +53,9 @@ function Products() {
                                         <p className='product-price'>€ {oneProduct.price}</p>
                                     </div>
                                     <span>
-                                        <button className='btn-cart' type='button'>add to cart</button>
+                                        <button className='btn-cart' type='button'><img
+                                            className='cart-icon' src={basket}
+                                            alt='shoppingcart'/></button>
                                     </span>
                                 </div>
                             </div>
@@ -51,6 +63,7 @@ function Products() {
                     </section>
                 </div>
             </div>
+            {loading && <p>Loading...</p>}
         </>
     )
 }

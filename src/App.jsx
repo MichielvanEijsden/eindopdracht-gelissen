@@ -17,6 +17,7 @@ import ErrorPage from "./pages/Errorpage/Errorpage.jsx";
 import Products from "./pages/products/Products.jsx";
 import Cart from "./pages/cart/Cart.jsx";
 import Login from "./pages/login/login.jsx";
+import Register from "./pages/register/Register.jsx";
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <Route path='/Privacy-Policy' element={<Privacy/>}/>
         <Route path='/Cart/' element={<Cart/>}/>
         <Route path='/Login' element={<Login/>}/>
+        <Route path='/Register' element={<Register/>}/>
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
       <Footer/>
