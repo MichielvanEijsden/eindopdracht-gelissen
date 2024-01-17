@@ -1,6 +1,7 @@
 .header-image {
    text-align: center;
    width: 40rem;
+    margin: 40px;
 }
 
 @media (max-width: 700px) {

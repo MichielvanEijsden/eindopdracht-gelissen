@@ -10,7 +10,7 @@
     justify-content: space-between;
 }
 .assortiment-img{
-    flex-basis: 10vw;
+    width: 20vw;
     margin: 2rem;
 }
 
@@ -34,5 +34,11 @@
     }
     .assortiment-layout-reverse{
         flex-direction: column;
+    }
+    .assortiment-text{
+        font-size: 15px;
+    }
+    .assortiment-img{
+        min-width: 100px;
     }
 }

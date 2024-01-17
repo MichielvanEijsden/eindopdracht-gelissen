@@ -8,22 +8,32 @@ import basket from '../../assets/cart-shopping-solid.svg'
 
 function Webshop() {
     const [allItems, setAllItems] = useState([])
-    const [error, setError] = useState()
+    const [loading, toggleLoading] = useState(false);
+    const [error, setError] = useState(false)
 
     useEffect(() => {
-        fetchAllItems()
-    }, []);
-
+        const controller = new AbortController();
     async function fetchAllItems() {
+        toggleLoading(true);
+        setError(false);
+
         try {
             const result = await axios.get('https://fakestoreapi.com/products')
             setAllItems(result.data)
             console.log(result.data)
         } catch (e) {
-            setError(e)
+            setError(true)
             console.error(error);
+        }finally {
+            toggleLoading(false)
         }
     }
+        fetchAllItems()
+
+        return function cleanup() {
+            controller.abort();
+        }
+    }, []);
 
 
     return (
@@ -64,6 +74,7 @@ function Webshop() {
                     </section>
                 </div>
             </div>
+            {loading && <p>Loading...</p>}
         </>
     )
 }

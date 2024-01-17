@@ -11,8 +11,8 @@ function Assortiment(){
                 <section className='center-page-container'>
                     <div>
                     <article className='section-background assortiment-layout'>
-                        <span className='assortiment-img'>
-                            <img  src={pointerLogo} alt="Pointer logo"/>
+                        <span>
+                            <img className='assortiment-img' src={pointerLogo} alt="Pointer logo"/>
                         </span>
                         <div className='assortiment-text'>
                         <h2 className='assortiment-header'>Pointer Bikes</h2>
@@ -32,8 +32,8 @@ function Assortiment(){
                         </div>
                     </article>
                     <article className='section-background assortiment-layout-reverse'>
-                        <span className='assortiment-img'>
-                            <img src={bikkelLogo} alt="Bikkel-bikes logo"/>
+                        <span>
+                            <img className='assortiment-img' src={bikkelLogo} alt="Bikkel-bikes logo"/>
                         </span>
                         <div className='assortiment-text'>
                         <h2 className='assortiment-header'>Bikkel Bikes</h2>
@@ -50,8 +50,8 @@ function Assortiment(){
                         </div>
                     </article>
                     <article className='section-background assortiment-layout'>
-                        <span className='assortiment-img'>
-                            <img src={rihlogo} alt="RIH logo"/>
+                        <span>
+                            <img className='assortiment-img' src={rihlogo} alt="RIH logo"/>
                         </span>
                         <div className='assortiment-text'>
                         <h2 className='assortiment-header'>RIH</h2>
