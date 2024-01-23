@@ -20,7 +20,7 @@ function Webshop() {
         try {
             const result = await axios.get('https://fakestoreapi.com/products')
             setAllItems(result.data)
-            console.log(result.data)
+            // console.log(result.data)
         } catch (e) {
             setError(true)
             console.error(error);
@@ -33,7 +33,7 @@ function Webshop() {
         return function cleanup() {
             controller.abort();
         }
-    }, []);
+    }, [error]);
 
 
     return (
