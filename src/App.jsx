@@ -7,7 +7,7 @@ import Assortiment from './pages/assortiment/Assortiment.jsx'
 import Location from './pages/location/Location.jsx'
 import AboutUs from './pages/about-us/AboutUs.jsx'
 import Footer from "./pages/footer/Footer.jsx";
-import Navigation from "./pages/navigation/Navigation.jsx";
+import Navigation from "./components/navigation/Navigation.jsx";
 import Webshop from "./pages/webshop/Webshop.jsx";
 import Contact from "./pages/about-us/subpages/contact/Contact.jsx";
 import Privacy from "./pages/about-us/subpages/privacy policy/Privacy.jsx";

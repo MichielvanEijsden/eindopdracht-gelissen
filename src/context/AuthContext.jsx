@@ -15,12 +15,12 @@ function AuthContextProvider({children}){
 
         toggleIsAuth(true)
         console.log('gebruiker is in gelogged')
-        navigate('/profile')
+        navigate('/Cart')
     }
     function logOut(){
         toggleIsAuth(false)
         console.log('gebruiker is uit gelogged')
-        navigate('/')
+        // navigate()
     }
 
     const data ={
