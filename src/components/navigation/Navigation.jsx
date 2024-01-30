@@ -48,7 +48,7 @@ function Navigation() {
                                                                                            alt='shopping cart'/></NavLink>
                         </li>
                         <li><NavLink className={({isActive}) => isActive ? 'active-link' : 'default-link'}
-                                     to='/' onClick={() => logOut() && setToggleMenu(false)}>Logout</NavLink></li>
+                                     to='/Login' onClick={() => logOut() && setToggleMenu(false)}>Logout</NavLink></li>
                     </>}
             </>
         )
