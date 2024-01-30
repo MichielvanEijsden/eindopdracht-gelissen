@@ -1,44 +1,47 @@
 import './login.css'
-import {useState} from "react";
+import {useContext, useState} from "react";
 import axios from "axios";
 import {useForm} from "react-hook-form";
 import {Link, useNavigate} from 'react-router-dom';
+import {AuthContext} from "../../context/AuthContext.jsx";
 
 function Login() {
     const {register, handleSubmit, formState: {errors}} = useForm()
     const navigate = useNavigate()
     const [error, setError] = useState()
-    const [token, setToken] = useState()
+    const {logIn,auth} = useContext(AuthContext)
     const [loading, toggleLoading] = useState(false);
 
 
         async function handleFormSubmit(data) {
             toggleLoading(true);
             setError(false);
+
             try {
                 const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin', {
-                    header: {
-                        "Content-Type": "application/json",
-                    },
                     ...data,
                 })
                 console.log(response.data)
-                setToken(response.data.accessToken)
+
+                logIn(response.data.accessToken)
             } catch (e) {
                 setError(e)
-                console.error(error);
+                console.error(e.message);
             } finally {
-                navigate('/Cart')
+                {error? navigate('/Login'):navigate('/Cart')}
+                auth.isAuth(true)
                 toggleLoading(false)
             }
         }
 
+    console.log('login auth: ',auth)
     return (
         <>
             <div className='outer-container'>
                 <div className='inner-container'>
                     <section className='center-page-container'>
                         <div>
+                            {error}
                             <form className='login-container' onSubmit={handleSubmit(handleFormSubmit)}>
                                 <label>Username:</label>
                                 <input type='text' {...register('username', {

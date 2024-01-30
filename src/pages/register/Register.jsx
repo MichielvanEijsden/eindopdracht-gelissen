@@ -8,7 +8,7 @@ function Register() {
     const {register, handleSubmit, formState: {errors}} = useForm()
     const navigate = useNavigate()
     const [error, setError] = useState()
-    const [user, setUser] = useState()
+
 
     async function handleFormSubmit(data) {
         try {
@@ -16,13 +16,13 @@ function Register() {
                 ...data,
                 role:['user']
             })
-
-            setUser(response.data)
+            console.log('signup response', response.data)
         } catch (e) {
             setError(e.response.data.message)
-            console.error(error);
+            console.error(e);
+        }finally {
+            navigate('/Login')
         }
-        navigate('/Login')
     }
 
 

@@ -1,40 +1,46 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {AuthContext} from "../../context/AuthContext.jsx";
 
 function Cart(){
 
-    const [allItems, setAllItems] = useState([])
+    const [cartItems, setCartItems] = useState([])
     const [error, setError] = useState()
+    const {logIn,auth} = useContext(AuthContext)
 
-
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     useEffect(() => {
-        fetchAllItems()
-    }, []);
-
-    async function fetchAllItems() {
-        try {
-            const result = await axios.get(url)
-            setAllItems(result.data)
-            console.log(result.data)
-        } catch (e) {
-            setError(e)
-            console.error(error);
+        async function fetchAllItems() {
+            try {
+                const result = await axios.get(url)
+                setCartItems(result.data)
+                // console.log(result.data)
+            } catch (e) {
+                setError(e)
+                console.error(error);
+            }
         }
-    }
+        fetchAllItems()
+    }, [logIn,error]);
 
-const url = 'https://fakestoreapi.com/carts/user/1'
+    console.log('userid: ',auth.user.id)
+    console.log('cart info: ', cartItems.data)
+const id = auth.user.id
+const url = 'https://fakestoreapi.com/carts/user/'+id
+
+
     return (
          <>
-             {/*{id ?*/}
+         {auth.isAuth === true &&
+
             <div className='outer-container'>
                 <div className='inner-container'>
                     <section className='center-page-container'>
                         <div>
                             <ul>
-                                {allItems.map((items) => {
+                                {cartItems.map((items) => {
                                     return (
                                         <li key={items.id}>
                                             <div className='section-background'>
@@ -58,7 +64,8 @@ const url = 'https://fakestoreapi.com/carts/user/1'
                     </section>
                 </div>
             </div>
-                  {/*: navigate('/Login')}*/}
+            }
+             {auth.isAuth === false && navigate('/Login')}
         </>
 
     )

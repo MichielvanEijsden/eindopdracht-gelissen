@@ -4,7 +4,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 import basket from '../../assets/cart-shopping-solid.svg'
 
-// import Basket from "../../components/Basket.jsx";
+
 
 function Webshop() {
     const [allItems, setAllItems] = useState([])
@@ -20,7 +20,6 @@ function Webshop() {
         try {
             const result = await axios.get('https://fakestoreapi.com/products')
             setAllItems(result.data)
-            // console.log(result.data)
         } catch (e) {
             setError(true)
             console.error(error);
