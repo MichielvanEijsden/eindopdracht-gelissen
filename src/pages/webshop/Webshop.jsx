@@ -5,36 +5,51 @@ import {Link} from "react-router-dom";
 import basket from '../../assets/cart-shopping-solid.svg'
 
 
-
 function Webshop() {
     const [allItems, setAllItems] = useState([])
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState(false)
+    const [filter, setFilter] = useState('')
 
     useEffect(() => {
         const controller = new AbortController();
-    async function fetchAllItems() {
-        toggleLoading(true);
-        setError(false);
 
-        try {
-            const result = await axios.get('https://fakestoreapi.com/products')
-            setAllItems(result.data)
-        } catch (e) {
-            setError(true)
-            console.error(error);
-        }finally {
-            toggleLoading(false)
+        async function fetchAllProducts() {
+            toggleLoading(true);
+            setError(false);
+
+            try {
+                const result = await axios.get(url)
+                setAllItems(result.data)
+                console.log(result.data)
+            } catch (e) {
+                setError(true)
+                console.error(error);
+            } finally {
+                toggleLoading(false)
+            }
         }
-    }
-        fetchAllItems()
+
+        fetchAllProducts()
 
         return function cleanup() {
             controller.abort();
         }
-    }, [error]);
+    }, [error,filter]);
 
-
+    function Filter() {
+        return (
+            <>
+                <button className='filter-btn' type='button' onClick={()=> setFilter('')}>all</button>
+                <button className='filter-btn' type='button' onClick={()=> setFilter("category/men's clothing")}>Men's Clothing</button>
+                <button className='filter-btn' type='button' onClick={()=> setFilter("category/women's clothing")}>Women's Clothing</button>
+                <button className='filter-btn' type='button' onClick={()=> setFilter('category/jewelery')}>Jewelery</button>
+                <button className='filter-btn' type='button' onClick={()=> setFilter('category/electronics')}>Electronics</button>
+            </>
+        )
+    }
+const url = `https://fakestoreapi.com/products/${filter}`
+    console.log(filter)
     return (
         <>
             <div className='outer-container'>
@@ -42,6 +57,7 @@ function Webshop() {
                     <section className='center-page-container'>
                         <div>
                             <h2>welcome to the Webshop</h2>
+                            <Filter/>
                             <ul>
                                 {allItems.map((items) => {
                                     return (

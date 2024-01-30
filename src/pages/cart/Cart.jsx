@@ -12,6 +12,8 @@ function Cart(){
     const navigate = useNavigate()
 
     useEffect(() => {
+        const controller = new AbortController();
+
         async function fetchAllItems() {
             try {
                 const result = await axios.get(url)
@@ -23,10 +25,13 @@ function Cart(){
             }
         }
         fetchAllItems()
+        return function cleanup() {
+            controller.abort();
+        }
     }, [logIn,error]);
 
     console.log('userid: ',auth.user.id)
-    console.log('cart info: ', cartItems.data)
+    console.log('cart info: ', cartItems)
 const id = auth.user.id
 const url = 'https://fakestoreapi.com/carts/user/'+id
 
@@ -41,6 +46,8 @@ const url = 'https://fakestoreapi.com/carts/user/'+id
                         <div>
                             <ul>
                                 {cartItems.map((items) => {
+                                    console.log('çart items',items.products.quantity)
+
                                     return (
                                         <li key={items.id}>
                                             <div className='section-background'>
@@ -58,6 +65,7 @@ const url = 'https://fakestoreapi.com/carts/user/'+id
                                             </div>
                                         </li>
                                     )
+
                                 })}
                             </ul>
                         </div>
