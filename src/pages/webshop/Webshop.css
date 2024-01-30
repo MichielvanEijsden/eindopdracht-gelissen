@@ -35,3 +35,11 @@
 .cart-icon{
     width: 2rem;
 }
+.filter-btn{
+
+    color: var(--text-color);
+    background-color: var(--btn-background);
+    border: none;
+    margin: 5px;
+    padding: 10px;
+}

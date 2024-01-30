@@ -31,7 +31,7 @@ function Products() {
         return function cleanup() {
             controller.abort();
         }
-    }, []);
+    }, [error]);
 
     const url = 'https://fakestoreapi.com/products/' + id
 

@@ -1,40 +1,47 @@
 import './login.css'
-import {useState} from "react";
+import {useContext, useState} from "react";
 import axios from "axios";
 import {useForm} from "react-hook-form";
 import {Link, useNavigate} from 'react-router-dom';
+import {AuthContext} from "../../context/AuthContext.jsx";
 
 function Login() {
     const {register, handleSubmit, formState: {errors}} = useForm()
     const navigate = useNavigate()
     const [error, setError] = useState()
-    const [token, setToken] = useState()
+    const {logIn,auth} = useContext(AuthContext)
+    const [loading, toggleLoading] = useState(false);
 
 
-    async function handleFormSubmit(data) {
-        try {
-            const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/login', {
-               header: {
-               "Content-Type": "application/json",
-               },
-            ...data,
-            })
-            console.log(response.data)
-            setToken(response.data.token)
-        } catch (e) {
-            setError(e)
-            console.error(error);
+        async function handleFormSubmit(data) {
+            toggleLoading(true);
+            setError(false);
+
+            try {
+                const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin', {
+                    ...data,
+                })
+                console.log(response.data)
+
+                logIn(response.data.accessToken)
+            } catch (e) {
+                setError(e)
+                console.error(e.message);
+            } finally {
+                {error? navigate('/Login'):navigate('/Cart')}
+                auth.isAuth(true)
+                toggleLoading(false)
+            }
         }
-        // navigate(-1)
-    }
 
-    // console.log('token is: ', token)
+    console.log('login auth: ',auth)
     return (
         <>
             <div className='outer-container'>
                 <div className='inner-container'>
                     <section className='center-page-container'>
                         <div>
+                            {error}
                             <form className='login-container' onSubmit={handleSubmit(handleFormSubmit)}>
                                 <label>Username:</label>
                                 <input type='text' {...register('username', {
@@ -43,7 +50,8 @@ function Login() {
                                         message: 'vul je username in'
                                     }
                                 })}/>
-                               <p>{errors.username && <p className='login-error-message'>{errors.username.message}</p>}</p>
+                                <p>{errors.username &&
+                                    <p className='login-error-message'>{errors.username.message}</p>}</p>
                                 <label>Password:</label>
                                 <input type='password' {...register('password', {
                                     required: {
@@ -51,13 +59,14 @@ function Login() {
                                         message: 'vul je wachtwoord in'
                                     }
                                 })} />
-                                <p>{errors.password && <p className='login-error-message'>{errors.password.message}</p>}</p>
+                                <p>{errors.password &&
+                                    <p className='login-error-message'>{errors.password.message}</p>}</p>
                                 <button className='login-btn' type='submit'>Login</button>
                             </form>
                             <div className='register'>
-                            <p>of</p>
+                                <p>of</p>
                                 <Link to='/Register'>
-                            <button className='register-btn'>Registreer </button>
+                                    <button className='register-btn'>Registreer</button>
                                 </Link>
                             </div>
                         </div>
@@ -65,7 +74,7 @@ function Login() {
                 </div>
             </div>
 
-
+            {loading && <p>Loading...</p>}
         </>
     )
 

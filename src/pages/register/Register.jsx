@@ -1,6 +1,6 @@
 import './Register.css'
 import {useForm} from "react-hook-form";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 import axios from "axios";
 
@@ -8,24 +8,24 @@ function Register() {
     const {register, handleSubmit, formState: {errors}} = useForm()
     const navigate = useNavigate()
     const [error, setError] = useState()
-    const [token, setToken] = useState()
+
 
     async function handleFormSubmit(data) {
         try {
             const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signup', {
                 ...data,
-                role:['user','MODERATOR']
+                role:['user']
             })
-            console.log(response.data)
-            setToken(response.data.token)
+            console.log('signup response', response.data)
         } catch (e) {
             setError(e.response.data.message)
-            console.error(error);
+            console.error(e);
+        }finally {
+            navigate('/Login')
         }
-        // navigate(-1)
     }
 
-    // console.log('token is: ', token)
+
     return (
         <>
             <div className='outer-container'>
