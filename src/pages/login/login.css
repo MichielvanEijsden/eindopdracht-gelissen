@@ -17,9 +17,6 @@ input{
 .login-btn{
     margin: 20px 0;
     padding: 20px;
-    color: var(--text-color);
-    background-color: var(--btn-background);
-    border: none;
 }
 .register{
     display: flex;
@@ -28,7 +25,4 @@ input{
 .register-btn{
     margin: 20px ;
     padding: 20px;
-    color: var(--text-color);
-    background-color: var(--btn-background);
-    border: none;
-}
+   }

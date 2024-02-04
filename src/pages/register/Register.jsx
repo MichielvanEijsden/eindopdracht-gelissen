@@ -62,7 +62,7 @@ function Register() {
                                 })} />
                                 {errors.email && <p className='login-error-message'>{errors.email.message}</p>}
 
-                                <button className='login-btn' type='submit'>Registreer</button>
+                                <button className='btn login-btn' type='submit'>Registreer</button>
                             </form>
 
                         </div>
