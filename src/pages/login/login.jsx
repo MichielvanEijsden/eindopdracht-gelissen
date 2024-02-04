@@ -61,12 +61,12 @@ function Login() {
                                 })} />
                                 <p>{errors.password &&
                                     <p className='login-error-message'>{errors.password.message}</p>}</p>
-                                <button className='login-btn' type='submit'>Login</button>
+                                <button className='btn login-btn' type='submit'>Login</button>
                             </form>
                             <div className='register'>
                                 <p>of</p>
                                 <Link to='/Register'>
-                                    <button className='register-btn'>Registreer</button>
+                                    <button className='btn register-btn'>Registreer</button>
                                 </Link>
                             </div>
                         </div>
