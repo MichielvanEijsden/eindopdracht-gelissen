@@ -2,8 +2,7 @@ import {useParams} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import axios from "axios";
 import basket from "../../assets/cart-shopping-solid.svg";
-import {DeleteFavorite, FavButton} from "../../helpers/FavButton.jsx";
-import {FavoriteContext} from "../../context/FavoriteContext.jsx";
+import FavButton from "../../helpers/FavButton.jsx";
 import {CartContext} from "../../context/CartContext.jsx";
 
 function Products() {
@@ -11,7 +10,6 @@ function Products() {
     const [oneProduct, setOneProduct] = useState([])
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState(false)
-    const {fav1} = useContext(FavoriteContext)
     const {addToCart} = useContext(CartContext)
 
     useEffect(() => {
@@ -59,10 +57,7 @@ function Products() {
                                     </div>
                                     <span>
                                         <span>
-                        {fav1.isFav ?
-                            <DeleteFavorite
-                                id={oneProduct.id}
-                            /> :
+
                             <FavButton
                                 key={oneProduct.id}
                                 id={oneProduct.id}
@@ -71,7 +66,7 @@ function Products() {
                                 des={oneProduct.description}
                                 price={oneProduct.price}
                             />
-                        }
+
                         <button className='btn btn-cart' type='button' onClick={() => {
                                 addToCart(oneProduct.id)
                                 }}><img
