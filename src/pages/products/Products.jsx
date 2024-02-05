@@ -1,16 +1,15 @@
 import {useParams} from "react-router-dom";
-import {useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
-import basket from "../../assets/cart-shopping-solid.svg";
 import FavButton from "../../helpers/FavButton.jsx";
-import {CartContext} from "../../context/CartContext.jsx";
+import CartButton from "../../helpers/CartButton.jsx";
 
 function Products() {
     const {id} = useParams()
     const [oneProduct, setOneProduct] = useState([])
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState(false)
-    const {addToCart} = useContext(CartContext)
+
 
     useEffect(() => {
         const controller = new AbortController();
@@ -66,12 +65,14 @@ function Products() {
                                 des={oneProduct.description}
                                 price={oneProduct.price}
                             />
+                            <CartButton
+                                id={oneProduct.id}
+                                img={oneProduct.img}
+                                category={oneProduct.category}
+                                des={oneProduct.description}
+                                price={oneProduct.price}
+                            />
 
-                        <button className='btn btn-cart' type='button' onClick={() => {
-                                addToCart(oneProduct.id)
-                                }}><img
-                                className='cart-icon' src={basket}
-                                alt='shoppingcart'/></button>
                     </span>
                                     </span>
                                 </div>

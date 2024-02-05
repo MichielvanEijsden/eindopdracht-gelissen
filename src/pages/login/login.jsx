@@ -28,7 +28,7 @@ function Login() {
                 setError(e)
                 console.error(e.message);
             } finally {
-                {error? navigate('/Login'):navigate('/Cart')}
+                {error? navigate('/Login'):navigate(-1)}
                 auth.isAuth(true)
                 toggleLoading(false)
             }

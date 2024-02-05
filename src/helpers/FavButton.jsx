@@ -1,15 +1,20 @@
 import {useContext} from "react";
 import {FavoriteContext} from "../context/FavoriteContext.jsx";
 import fav from "../assets/heart-regular.svg";
+import {useNavigate} from "react-router-dom";
+import {AuthContext} from "../context/AuthContext.jsx";
 
 
 function FavButton(prop) {
 
     const {favList, addFavorite, removeFavorite} = useContext(FavoriteContext)
     const isFavorite = favList.some((favProduct) => favProduct.id === prop.id);
-
+    const {auth} = useContext(AuthContext)
+    const navigate = useNavigate()
     const handleToggleFavorite = () => {
-        if (isFavorite) {
+        if (!auth.isAuth)
+            navigate('/Login')
+        if (isFavorite ) {
             removeFavorite(prop.id);
         } else {
             addFavorite(prop);

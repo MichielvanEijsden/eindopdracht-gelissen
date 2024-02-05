@@ -1,17 +1,21 @@
 import {useContext} from "react";
-
 import basket from "../assets/cart-shopping-solid.svg";
 import {CartContext} from "../context/CartContext.jsx";
+import {AuthContext} from "../context/AuthContext.jsx";
+import {useNavigate} from "react-router-dom";
 
 function CartButton(prop) {
 
     const {cartList, addToCart, removeFromCart} = useContext(CartContext)
     const isInCart = cartList.some((cartProduct) => cartProduct.id === prop.id);
-
+    const {auth} = useContext(AuthContext)
+    const navigate = useNavigate()
     const handleToggleCart = () => {
-        if (isInCart) {
+        if (!auth.isAuth) {
+            navigate('/Login')
+        } else if(isInCart) {
             removeFromCart(prop.id);
-        } else {
+        }else{
             addToCart(prop);
         }
     }
@@ -20,6 +24,7 @@ function CartButton(prop) {
         <div >
             {/* Product details */}
             <button
+
                 onClick={handleToggleCart}
                 className={isInCart ? 'btn-cart in-cart' : 'btn-cart out-cart'}
             >

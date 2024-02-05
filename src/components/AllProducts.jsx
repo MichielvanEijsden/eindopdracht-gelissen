@@ -1,6 +1,5 @@
 import {Link} from "react-router-dom";
 import FavButton from "../helpers/FavButton.jsx";
-
 import CartButton from "../helpers/CartButton.jsx";
 
 function AllProducts(prop) {
