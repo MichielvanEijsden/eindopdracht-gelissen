@@ -4,6 +4,7 @@ import axios from "axios";
 import isTokenValid from "../helpers/isTokenValid";
 
 
+
 export const AuthContext = createContext({})
 
 function AuthContextProvider({children}){
@@ -47,6 +48,7 @@ function AuthContextProvider({children}){
                     username: response.data.username,
                     email: response.data.email,
                     id: response.data.id,
+
                 },
                 status:'done'
             })

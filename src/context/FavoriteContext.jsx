@@ -8,19 +8,18 @@ function FavoriteContextProvider({children}) {
     const [favList, setFavList] = useState([])
 
 
-    useEffect(() => {
-        let retFav = localStorage.getItem('fav')
+    // useEffect(() => {
+    //     let retFav = localStorage.getItem('fav')
+    //
+    //
+    //     if (retFav) {
+    //         console.log('yippeeee')
+    //     } else {
+    //         console.log('boooo')
+    //     }
+    //
+    // }, []);
 
-
-        if (retFav) {
-            console.log('yippeeee')
-        } else {
-            console.log('boooo')
-        }
-
-    }, []);
-
-    console.log('favlist:', favList)
 
     const addFavorite = (product) => {
         setFavList([...favList, product]);

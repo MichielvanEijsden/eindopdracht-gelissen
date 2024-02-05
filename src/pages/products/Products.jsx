@@ -60,6 +60,7 @@ function Products() {
                             <FavButton
                                 key={oneProduct.id}
                                 id={oneProduct.id}
+                                title = {oneProduct.title}
                                 img={oneProduct.img}
                                 category={oneProduct.category}
                                 des={oneProduct.description}
@@ -68,6 +69,7 @@ function Products() {
                             <CartButton
                                 id={oneProduct.id}
                                 img={oneProduct.img}
+                                title = {oneProduct.title}
                                 category={oneProduct.category}
                                 des={oneProduct.description}
                                 price={oneProduct.price}

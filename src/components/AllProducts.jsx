@@ -23,17 +23,19 @@ function AllProducts(prop) {
                             <FavButton
                                 key = {prop.id}
                                 id={prop.id}
+                                title = {prop.title}
                                 img={prop.img}
                                 category={prop.category}
-                                des={prop.description}
+                                des={prop.des}
                                 price={prop.price}
                             />
 
                         <CartButton
                             id={prop.id}
+                            title = {prop.title}
                             img={prop.img}
                             category={prop.category}
-                            des={prop.description}
+                            des={prop.des}
                             price={prop.price}
                         />
                     </span>

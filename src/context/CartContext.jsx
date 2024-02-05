@@ -8,19 +8,18 @@ function CartContextProvider({children}) {
     const [cartList, setCartList] = useState([])
 
 
-    useEffect(() => {
-        let retFav = localStorage.getItem('cart')
+    // useEffect(() => {
+    //     let retFav = localStorage.getItem('cart')
+    //
+    //
+    //     if (retFav) {
+    //         console.log('yippeeee')
+    //     } else {
+    //         console.log('boooo')
+    //     }
+    //
+    // }, []);
 
-
-        if (retFav) {
-            console.log('yippeeee')
-        } else {
-            console.log('boooo')
-        }
-
-    }, []);
-
-    console.log('cart list:', cartList)
 
     const addToCart = (product) => {
         setCartList([...cartList, product]);
