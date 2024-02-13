@@ -68,6 +68,8 @@ function AuthContextProvider({children}){
 
     function logOut(){
         localStorage.removeItem('token')
+        localStorage.removeItem('cart')
+        localStorage.removeItem('favorites')
         setAuth({
             isAuth: false,
             user: null,

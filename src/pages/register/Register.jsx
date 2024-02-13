@@ -8,13 +8,16 @@ function Register() {
     const {register, handleSubmit, formState: {errors}} = useForm()
     const navigate = useNavigate()
     const [error, setError] = useState()
-
+    const cartlist = localStorage.getItem('cart')
+    const favlist = localStorage.getItem('favorites')
 
     async function handleFormSubmit(data) {
         try {
             const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signup', {
                 ...data,
-                role:['user']
+                role:['user'],
+                info: cartlist,favlist,
+
             })
             console.log('signup response', response.data)
         } catch (e) {

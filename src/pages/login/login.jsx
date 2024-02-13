@@ -28,13 +28,12 @@ function Login() {
                 setError(e)
                 console.error(e.message);
             } finally {
-                {error? navigate('/Login'):navigate(-1)}
+                {error? navigate('/Login'):navigate('/Webshop')}
                 auth.isAuth(true)
                 toggleLoading(false)
             }
         }
 
-    console.log('login auth: ',auth)
     return (
         <>
             <div className='outer-container'>
