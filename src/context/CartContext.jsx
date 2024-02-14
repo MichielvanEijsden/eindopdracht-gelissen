@@ -1,12 +1,18 @@
-import {createContext,useState} from "react";
+import {createContext, useEffect, useState} from "react";
+import Handler from "../components/InfoUpdater.jsx";
 
 
 export const CartContext = createContext({})
 
 function CartContextProvider({children}) {
 
-    const [cartList, setCartList] = useState([])
+    const [cartList, setCartList] = useState(
+        JSON.parse(localStorage.getItem('cart'))
+    )
+    useEffect(() => {
+        Handler()
 
+    }, [cartList,setCartList]);
 
     console.log(cartList)
     const cartData = JSON.stringify(cartList)

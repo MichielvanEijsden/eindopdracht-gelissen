@@ -23,7 +23,7 @@ function FavButton(prop) {
 
     return (
         <div>
-            {/* Product details */}
+
             <button
                 onClick={handleToggleFavorite}
                 className={isFavorite ? 'fav-active' : 'fav-deActive'}

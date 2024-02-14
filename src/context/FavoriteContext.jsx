@@ -1,22 +1,28 @@
-import {createContext, useState} from "react";
-import infoUpdater from "../components/InfoUpdater.jsx";
+import {createContext, useEffect, useState} from "react";
+import Handler from "../components/InfoUpdater.jsx";
+
 
 
 export const FavoriteContext = createContext({})
 
 function FavoriteContextProvider({children}) {
 
-    const [favList, setFavList] = useState([])
+    const [favList, setFavList] = useState(
+        JSON.parse(localStorage.getItem('favorites'))
+    )
 
 
     console.log(favList)
-    const favorites = JSON.stringify(favList)
-    localStorage.setItem('favorites',favorites )
+    useEffect(() => {
+        Handler()
+    }, [favList]);
 
+    const favorites = JSON.stringify(favList)
+    localStorage.setItem('favorites',favorites)
 
     const addFavorite = (product) => {
         setFavList([...favList, product]);
-        infoUpdater()
+
     };
 
     const removeFavorite = (productId) => {

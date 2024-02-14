@@ -2,6 +2,7 @@ import {createContext, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import isTokenValid from "../helpers/isTokenValid";
+import Handler from "../components/InfoUpdater.jsx";
 
 
 
@@ -48,11 +49,14 @@ function AuthContextProvider({children}){
                     username: response.data.username,
                     email: response.data.email,
                     id: response.data.id,
+                    info: localStorage.getItem('favorites')
 
                 },
                 status:'done'
             })
             console.log('Auth data: ',response.data)
+            console.log( 'info: ', response.data.info)
+            Handler(response.data.info)
         }catch (e) {
             console.error(e)
             logOut()
@@ -68,8 +72,7 @@ function AuthContextProvider({children}){
 
     function logOut(){
         localStorage.removeItem('token')
-        localStorage.removeItem('cart')
-        localStorage.removeItem('favorites')
+
         setAuth({
             isAuth: false,
             user: null,

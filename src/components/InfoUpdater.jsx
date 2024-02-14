@@ -1,21 +1,14 @@
 import axios from "axios";
-import {useContext} from "react";
-import {AuthContext} from "../context/AuthContext.jsx";
-
-
-const token = localStorage.getItem('token')
-const favorites = localStorage.getItem('favorites')
 
 function InfoUpdater() {
-    // const {auth} = useContext(AuthContext)
-    // const id = auth.user.id
+    const token = localStorage.getItem('token')
+    const favorites = localStorage.getItem('favorites')
+    // const cart = localStorage.getItem('cart')
 
-        const url = 'https://frontend-educational-backend.herokuapp.com/api/' + 7
-
-        async function handler() {
+    async function Handler() {
             try {
-                const response = await axios.put(url, {
-                        'info': `${favorites}`,
+                const response = await axios.put('https://frontend-educational-backend.herokuapp.com/api/user', {
+                        info: `${favorites}`,
                     },
                     {
                         headers: {
@@ -26,14 +19,14 @@ function InfoUpdater() {
 
                 )
                 console.log(response)
+                // setResponse(response)
             } catch (e) {
                 console.error(e)
             }
-        }
-        handler()
-
-
+    }
+    Handler()
 
 }
+
 
 export default InfoUpdater
