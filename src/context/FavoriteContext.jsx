@@ -7,7 +7,7 @@ export const FavoriteContext = createContext({})
 
 function FavoriteContextProvider({children}) {
 
-    const [favList, setFavList] = useState(
+    const [favList, setFavList] = useState([],
         JSON.parse(localStorage.getItem('favorites'))
     )
 
