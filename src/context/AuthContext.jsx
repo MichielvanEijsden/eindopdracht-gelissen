@@ -49,7 +49,7 @@ function AuthContextProvider({children}){
                     username: response.data.username,
                     email: response.data.email,
                     id: response.data.id,
-                    info: localStorage.getItem('favorites')
+                    info: response.data.info
 
                 },
                 status:'done'
@@ -72,7 +72,8 @@ function AuthContextProvider({children}){
 
     function logOut(){
         localStorage.removeItem('token')
-
+        localStorage.removeItem('cart')
+        localStorage.removeItem('favorites')
         setAuth({
             isAuth: false,
             user: null,

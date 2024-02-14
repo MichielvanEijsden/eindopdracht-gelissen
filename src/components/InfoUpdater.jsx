@@ -3,12 +3,12 @@ import axios from "axios";
 function InfoUpdater() {
     const token = localStorage.getItem('token')
     const favorites = localStorage.getItem('favorites')
-    // const cart = localStorage.getItem('cart')
+    const cart = localStorage.getItem('cart')
 
     async function Handler() {
             try {
                 const response = await axios.put('https://frontend-educational-backend.herokuapp.com/api/user', {
-                        info: `${favorites}`,
+                        info: `${favorites}, ${cart}`,
                     },
                     {
                         headers: {
