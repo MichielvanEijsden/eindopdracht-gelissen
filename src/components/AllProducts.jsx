@@ -1,13 +1,9 @@
 import {Link} from "react-router-dom";
-import {FavButton, DeleteFavorite} from "../helpers/FavButton.jsx";
-import basket from "../assets/cart-shopping-solid.svg";
-import {useContext} from "react";
-import {CartContext} from "../context/CartContext.jsx";
-import {FavoriteContext} from "../context/FavoriteContext.jsx";
+import FavButton from "../helpers/FavButton.jsx";
+import CartButton from "../helpers/CartButton.jsx";
 
 function AllProducts(prop) {
-    const {addToCart} = useContext(CartContext)
-    const {fav1} = useContext(FavoriteContext)
+
 
     return (
 
@@ -24,24 +20,24 @@ function AllProducts(prop) {
                     </div>
 
                     <span>
-                        {fav1.isFav ?
-                        <DeleteFavorite
-                            id = {prop.id}
-                        />:
                             <FavButton
                                 key = {prop.id}
                                 id={prop.id}
+                                title = {prop.title}
                                 img={prop.img}
                                 category={prop.category}
-                                des={prop.description}
+                                des={prop.des}
                                 price={prop.price}
                             />
-                        }
-                        <button className='btn btn-cart' type='button' onClick={() => {
-                            addToCart(prop.id)
-                        }}><img
-                            className='cart-icon' src={basket}
-                            alt='shoppingcart'/></button>
+
+                        <CartButton
+                            id={prop.id}
+                            title = {prop.title}
+                            img={prop.img}
+                            category={prop.category}
+                            des={prop.des}
+                            price={prop.price}
+                        />
                     </span>
                 </div>
             </div>

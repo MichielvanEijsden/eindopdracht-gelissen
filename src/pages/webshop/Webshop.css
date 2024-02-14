@@ -41,8 +41,16 @@
     height: 2rem;
 }
 .fav-active{
-    background-color: #6ec1e4;
+    background-color: goldenrod;
+    border: none;
 }
 .fav-deActive{
+    background-color: var(--btn-background);
+    border: none;
+}
+.in-cart{
+    background-color: #1c1c1c;
+}
+.out-cart{
     background-color: var(--btn-background);
 }

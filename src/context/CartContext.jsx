@@ -1,29 +1,43 @@
-import {createContext, useState} from "react";
+import {createContext, useEffect, useState} from "react";
+import Handler from "../components/InfoUpdater.jsx";
 
-export const CartContext= createContext([])
 
-function CartContextProvider({children}){
+export const CartContext = createContext({})
 
-    const [cartItems,setCartItems] =useState([])
-    function addToCart(productId){
-        console.log(productId)
+function CartContextProvider({children}) {
 
-        let cartList = [...cartItems]
-        const index = cartList.findIndex(item=> item.id === productId)
+    const [cartList, setCartList] = useState(
+        JSON.parse(localStorage.getItem('cart'))
+    )
+    useEffect(() => {
+        Handler()
 
-        if(index === -1){
-            cartList.push([{
-                id: productId,
-            }])
-        }
+    }, [cartList,setCartList]);
+
+    console.log(cartList)
+    const cartData = JSON.stringify(cartList)
+    localStorage.setItem('cart', cartData)
+    const addToCart = (product) => {
+        setCartList([...cartList, product]);
+
+    };
+
+    const removeFromCart = (productId) => {
+        const updatedShoppingCart = cartList.filter((product) => product.id !== productId);
+        setCartList(updatedShoppingCart);
+    };
+
+    const favData = {
+        cartList,
+        addToCart,
+        removeFromCart,
     }
-// setCartItems(...cartItems)
-    console.log(cartItems)
-    return(
-        <CartContext.Provider value={{cartItems,addToCart}}>
+
+    return (
+        <CartContext.Provider value={favData}>
             {children}
         </CartContext.Provider>
     )
 }
-export default CartContextProvider
 
+export default CartContextProvider
