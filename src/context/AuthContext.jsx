@@ -2,7 +2,8 @@ import {createContext, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import isTokenValid from "../helpers/isTokenValid";
-import Handler from "../components/InfoUpdater.jsx";
+
+import GetInfo from "../components/GetInfo.jsx";
 
 
 
@@ -21,6 +22,7 @@ function AuthContextProvider({children}){
 
         if (token && isTokenValid(token)){
             void logIn(token)
+            GetInfo()
         }else {
             setAuth({
                 isAuth: false,
@@ -49,21 +51,24 @@ function AuthContextProvider({children}){
                     username: response.data.username,
                     email: response.data.email,
                     id: response.data.id,
-                    info: response.data.info
 
                 },
                 status:'done'
             })
-            console.log('Auth data: ',response.data)
+            // console.log('Auth data: ',response.data)
             console.log( 'info: ', response.data.info)
-            Handler(response.data.info)
+
+
+
+
         }catch (e) {
             console.error(e)
             logOut()
         }finally {
-            console.log('de token is:',token)
+            // console.log('de token is:',token)
 
             console.log('gebruiker is in gelogd')
+            GetInfo()
 
         }
 

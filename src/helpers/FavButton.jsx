@@ -12,9 +12,10 @@ function FavButton(prop) {
     const {auth} = useContext(AuthContext)
     const navigate = useNavigate()
     const handleToggleFavorite = () => {
-        if (!auth.isAuth)
+        if (!auth.isAuth) {
             navigate('/Login')
-        if (isFavorite ) {
+        }
+        else if (isFavorite ) {
             removeFavorite(prop.id);
         } else {
             addFavorite(prop);
@@ -23,7 +24,6 @@ function FavButton(prop) {
 
     return (
         <div>
-
             <button
                 onClick={handleToggleFavorite}
                 className={isFavorite ? 'fav-active' : 'fav-deActive'}

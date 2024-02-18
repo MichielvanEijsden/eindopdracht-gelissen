@@ -41,7 +41,7 @@
     font-size: 25px;
 }
 
-.time-table-container {
+.side-menu-container {
     position: sticky;
     top: 0;
     height: 80vh;
@@ -49,32 +49,32 @@
     margin-left: -4rem;
     margin-right: 4rem;
 }
-.time-table-container h2{
+.side-menu-container h2{
     padding: 2rem;
 }
 
 
-.time-table {
-    width: 26vw;
+.side-menu {
+    width: 20vw;
     padding: 2rem;
     flex-wrap: wrap;
 }
 
-.day {
+.section {
     display: flex;
     flex-wrap: wrap;
 }
 
-.time-table-text {
+.side-menu-text {
     display: flex;
-    padding: 1rem 5rem 1rem 1rem;
+    padding: 1rem 1rem;
     margin-bottom: 1rem;
     font-size: 20px;
     background-color: #415050;
-    width: 11vw;
+    width: 8vw;
 }
 
-#time-table {
+#side-menu-container {
     background-color: var(--page-container);
 }
 
