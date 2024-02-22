@@ -9,30 +9,29 @@ function Login() {
     const {register, handleSubmit, formState: {errors}} = useForm()
     const navigate = useNavigate()
     const [error, setError] = useState()
-    const {logIn,auth} = useContext(AuthContext)
+    const {logIn} = useContext(AuthContext)
     const [loading, toggleLoading] = useState(false);
 
 
-        async function handleFormSubmit(data) {
-            toggleLoading(true);
-            setError(false);
+    async function handleFormSubmit(data) {
+        toggleLoading(true);
+        try {
+            const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin', {
+                ...data,
+            })
+            console.log(response.data)
 
-            try {
-                const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin', {
-                    ...data,
-                })
-                console.log(response.data)
+            logIn(response.data.accessToken)
+        } catch (e) {
+            setError(e.message)
+            console.error(e.message)
 
-                logIn(response.data.accessToken)
-            } catch (e) {
-                setError(e)
-                console.error(e.message);
-            } finally {
-                {error? navigate('/Login'):navigate('/Webshop')}
-                auth.isAuth(true)
-                toggleLoading(false)
-            }
+        } finally {
+            {error ? navigate('/Webshop') : navigate('/Login')}
+            toggleLoading(false)
         }
+    }
+
 
     return (
         <>
@@ -72,12 +71,9 @@ function Login() {
                     </section>
                 </div>
             </div>
-
             {loading && <p>Loading...</p>}
         </>
     )
-
-
 }
 
 export default Login

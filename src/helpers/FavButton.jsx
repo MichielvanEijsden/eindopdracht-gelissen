@@ -4,7 +4,6 @@ import fav from "../assets/heart-regular.svg";
 import {useNavigate} from "react-router-dom";
 import {AuthContext} from "../context/AuthContext.jsx";
 
-
 function FavButton(prop) {
 
     const {favList, addFavorite, removeFavorite} = useContext(FavoriteContext)
@@ -12,9 +11,10 @@ function FavButton(prop) {
     const {auth} = useContext(AuthContext)
     const navigate = useNavigate()
     const handleToggleFavorite = () => {
-        if (!auth.isAuth)
+        if (!auth.isAuth) {
             navigate('/Login')
-        if (isFavorite ) {
+        }
+        else if (isFavorite ) {
             removeFavorite(prop.id);
         } else {
             addFavorite(prop);
@@ -23,12 +23,11 @@ function FavButton(prop) {
 
     return (
         <div>
-
             <button
                 onClick={handleToggleFavorite}
-                className={isFavorite ? 'fav-active' : 'fav-deActive'}
-            >
-                <img className='fav-icon' src={fav} alt='fav-btn'/></button>
+                className={isFavorite ? 'fav-active' : 'fav-deActive'}>
+                <img className='fav-icon' src={fav} alt='fav-btn'/>
+            </button>
         </div>
     )
 }

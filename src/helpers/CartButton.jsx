@@ -22,13 +22,11 @@ function CartButton(prop) {
 
     return (
         <div >
-            {/* Product details */}
             <button
-
-                onClick={handleToggleCart}
-                className={isInCart ? 'btn-cart in-cart' : 'btn-cart out-cart'}
-            >
-                <img className='cart-icon' src={basket} alt='shoppingcart'/></button>
+                onClick={() =>handleToggleCart()}
+                className={isInCart ? 'btn-cart in-cart' : 'btn-cart out-cart'}>
+                <img className='cart-icon' src={basket} alt='shoppingcart'/>
+            </button>
         </div>
     )
 }

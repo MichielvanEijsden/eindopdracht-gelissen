@@ -1,33 +1,57 @@
-import {createContext, useEffect, useState} from "react";
+import {createContext, useContext, useEffect, useState} from "react";
 import Handler from "../components/InfoUpdater.jsx";
-
-
+import {AuthContext} from "./AuthContext.jsx";
+import axios from "axios";
+import {CartContext} from "./CartContext.jsx";
 
 export const FavoriteContext = createContext({})
 
 function FavoriteContextProvider({children}) {
+    const { auth } = useContext(AuthContext);
+    const {cartList,setCarList} = useContext(CartContext)
+    const [favList, setFavList] = useState([])
+    const token = localStorage.getItem('token')
 
-    const [favList, setFavList] = useState([],
-        JSON.parse(localStorage.getItem('favorites'))
-    )
-
-
-    console.log(favList)
     useEffect(() => {
-        Handler()
-    }, [favList]);
+        if (auth) {
+            getInfo();
+        }
+    }, [auth]);
 
-    const favorites = JSON.stringify(favList)
-    localStorage.setItem('favorites',favorites)
+    async function getInfo(){
+        try {
+            const response = await axios.get('https://frontend-educational-backend.herokuapp.com/api/user',{
+                headers:{
+                    "Content-Type": 'application/json',
+                    Authorization: `Bearer ${token}`
+                },
+            })
+            // console.log('get info result',response.data)
+            const data = JSON.parse(response.data.info)
+            console.log('get Data',data)
+            setCarList(data[0])
+            setFavList(data[1])
+        }catch (e){
+            console.error(e)
+        }
+    }
+    useEffect(() => {
+    function updater() {
+        Handler(cartList, favList)
+    }
+    updater()
+    }, [favList,cartList]);
 
+    // console.log('init fav',favList)
     const addFavorite = (product) => {
         setFavList([...favList, product]);
-
     };
 
     const removeFavorite = (productId) => {
-        const updatedFavorites = favList.filter((product) => product.id !== productId);
-        setFavList(updatedFavorites);
+        if (favList) {
+            const updatedFavorites = favList.filter((product) => product.id !== productId);
+            setFavList(updatedFavorites);
+        }
     };
 
     const favData = {

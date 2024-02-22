@@ -1,0 +1,12 @@
+.impression-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.impression-section{
+    margin: 1rem;
+    text-align: center;
+}
+.impression-img{
+    width: 30vw;
+}

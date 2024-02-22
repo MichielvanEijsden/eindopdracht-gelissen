@@ -1,0 +1,22 @@
+.counter{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -2rem;
+    right: 0;
+    font-size: 1.2rem;
+}
+.counter-btn{
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0.5rem;
+}
+
+.cost-overview h2{
+
+}
+.time-table {
+    width: 26vw;
+    padding: 2rem;
+    flex-wrap: wrap;
+}

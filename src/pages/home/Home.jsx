@@ -4,8 +4,11 @@ import {Link} from "react-router-dom";
 import gearIcon from '../../assets/gear-solid.svg'
 import bikeIcon from '../../assets/person-biking-solid.svg'
 
+import Gallery from "../../helpers/gallery/Gallery.jsx";
+
 
 function Home() {
+
 
     return (
         <>
@@ -18,16 +21,15 @@ function Home() {
                                 <span>
                                 <img id='leaseFiets' src={leasefiets} alt='leasefiets-img'/>
                                 </span>
-                                    <h1>Bikkel E-Bike ANWB Test **** sterren</h1>
-                                <span>
-                                gallery here
-                                </span>
+                                <h1>Bikkel E-Bike ANWB Test **** sterren</h1>
+                                <Gallery/>
 
                                 <div className='home-info-assortiment'>
                                     <Link to='/Webshop'>
                                         <img className='home-icon' src={bikeIcon} alt='bike icon'/>
                                     </Link>
-                                    <p className='home-info'>Wij hebben een ruim assortiment aan nieuwe stadsfietsen en elektrische-fietsen
+                                    <p className='home-info'>Wij hebben een ruim assortiment aan nieuwe stadsfietsen en
+                                        elektrische-fietsen
                                         (E-bikes)
                                         van verschillende merken. Als u meer wilt weten over een aantal van de door ons
                                         aangeboden
@@ -37,7 +39,8 @@ function Home() {
                                     <Link to='/Location'>
                                         <img className='home-icon' src={gearIcon} alt='gear icon'/>
                                     </Link>
-                                    <p className='home-info' >Wij beschikken over een eigen werkplaats voor onderhoud en reparatie. Hier wordt
+                                    <p className='home-info'>Wij beschikken over een eigen werkplaats voor onderhoud en
+                                        reparatie. Hier wordt
                                         met
                                         veel
                                         ervaring, kennis en precisie aan uw fiets wordt gewerkt. Kijk op deze pagina of
@@ -49,37 +52,37 @@ function Home() {
                         </section>
                     </div>
                 </div>
-                <div className='time-table-container'>
-                    <div id='time-table'>
+                <div className='side-menu-container'>
+                    <div id='side-menu-container'>
                         <h2>Openingstijden</h2>
-                        <div className='time-table'>
-                            <div className='day'>
-                                <div className='time-table-text'><p>Maandag</p></div>
-                                <div className='time-table-text'><p>09:00-18:00</p></div>
+                        <div className='side-menu'>
+                            <div className='section'>
+                                <div className='side-menu-text'><p>Maandag</p></div>
+                                <div className='side-menu-text'><p>09:00-18:00</p></div>
                             </div>
-                            <div className='day'>
-                                <div className='time-table-text'><p>Dinsdag</p></div>
-                                <div className='time-table-text'><p>Gesloten</p></div>
+                            <div className='section'>
+                                <div className='side-menu-text'><p>Dinsdag</p></div>
+                                <div className='side-menu-text'><p>Gesloten</p></div>
                             </div>
-                            <div className='day'>
-                                <div className='time-table-text'><p>Woensdag</p></div>
-                                <div className='time-table-text'><p>09:00-18:00</p></div>
+                            <div className='section'>
+                                <div className='side-menu-text'><p>Woensdag</p></div>
+                                <div className='side-menu-text'><p>09:00-18:00</p></div>
                             </div>
-                            <div className='day'>
-                                <div className='time-table-text'><p>Donderdag</p></div>
-                                <div className='time-table-text'><p>09:00-18:00</p></div>
+                            <div className='section'>
+                                <div className='side-menu-text'><p>Donderdag</p></div>
+                                <div className='side-menu-text'><p>09:00-18:00</p></div>
                             </div>
-                            <div className='day'>
-                                <div className='time-table-text'><p>Vrijdag</p></div>
-                                <div className='time-table-text'><p>09:00-18:00</p></div>
+                            <div className='section'>
+                                <div className='side-menu-text'><p>Vrijdag</p></div>
+                                <div className='side-menu-text'><p>09:00-18:00</p></div>
                             </div>
-                            <div className='day'>
-                                <div className='time-table-text'><p>Zaterdag</p></div>
-                                <div className='time-table-text'><p>09:00-16:00</p></div>
+                            <div className='section'>
+                                <div className='side-menu-text'><p>Zaterdag</p></div>
+                                <div className='side-menu-text'><p>09:00-16:00</p></div>
                             </div>
-                            <div className='day'>
-                                <div className='time-table-text'><p>Zondag</p></div>
-                                <div className='time-table-text'><p>Gesloten</p></div>
+                            <div className='section'>
+                                <div className='side-menu-text'><p>Zondag</p></div>
+                                <div className='side-menu-text'><p>Gesloten</p></div>
                             </div>
                         </div>
                     </div>

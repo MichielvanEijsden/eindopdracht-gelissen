@@ -2,9 +2,6 @@ import {createContext, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import isTokenValid from "../helpers/isTokenValid";
-import Handler from "../components/InfoUpdater.jsx";
-
-
 
 export const AuthContext = createContext({})
 
@@ -30,11 +27,8 @@ function AuthContextProvider({children}){
         }
     }, []);
 
-
-
     async function logIn(token){
         localStorage.setItem('token', token);
-
         try{
             const response = await axios.get(`https://frontend-educational-backend.herokuapp.com/api/user`,
                 {
@@ -49,31 +43,21 @@ function AuthContextProvider({children}){
                     username: response.data.username,
                     email: response.data.email,
                     id: response.data.id,
-                    info: response.data.info
+                    info:response.data.info
 
                 },
                 status:'done'
             })
-            console.log('Auth data: ',response.data)
-            console.log( 'info: ', response.data.info)
-            Handler(response.data.info)
         }catch (e) {
             console.error(e)
             logOut()
         }finally {
-            console.log('de token is:',token)
-
             console.log('gebruiker is in gelogd')
-
         }
-
     }
-
 
     function logOut(){
         localStorage.removeItem('token')
-        localStorage.removeItem('cart')
-        localStorage.removeItem('favorites')
         setAuth({
             isAuth: false,
             user: null,

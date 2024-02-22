@@ -1,0 +1,24 @@
+.gallery-container{
+    display: flex;
+    justify-content: center;
+    margin: 2vw;
+}
+
+.gallery {
+    width: 15vw;
+    height: 10vw;
+    overflow: hidden;
+    /*margin: 20px auto;*/
+}
+
+.gallery img, .gallery-sides img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+.gallery-sides{
+    width: 15vw;
+    height: 10vw;
+    overflow: hidden;
+    /*margin: 20px auto;*/
+}

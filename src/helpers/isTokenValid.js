@@ -1,4 +1,3 @@
-
 import {jwtDecode} from "jwt-decode";
 
 function isTokenValid(token){
@@ -9,13 +8,9 @@ function isTokenValid(token){
     const expTime = decoded.exp
     console.log(validTime,expTime)
     if (expTime > validTime){
-        console.log('yay')
-        return true
+        return true;
     }else {
-        console.log('nay')
         return false
     }
-
-
 }
 export default isTokenValid
