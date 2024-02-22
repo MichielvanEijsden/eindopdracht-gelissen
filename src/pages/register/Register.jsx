@@ -20,11 +20,10 @@ function Register() {
 
             })
             console.log('signup response', response.data)
+            navigate('/Login')
         } catch (e) {
             setError(e.response.data.message)
             console.error(e);
-        } finally {
-            {error? navigate('/Login'):navigate('/Register')}
         }
     }
 

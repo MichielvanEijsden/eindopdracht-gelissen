@@ -3,12 +3,20 @@ import {CartContext} from "../context/CartContext.jsx";
 
 function CartCounter({totalAmount,setTotalAmount,price,itemId}) {
 
-
-    const [count, setCount] = useState(1);
     const {cartList} = useContext(CartContext)
+    const storedCount = localStorage.getItem(`count_${itemId}`);
+    const [count, setCount] = useState(storedCount|| 1);
     const productPrice =(price*count).toFixed(2)
-    console.log('prijs',price)
-    console.log('cc totalAmount: ',totalAmount)
+
+    useEffect(() => {
+        localStorage.setItem(`count_${itemId}`, count);
+    }, [count, itemId]);
+
+    useEffect(() => {
+        if (storedCount !== null) {
+            setCount(parseInt(storedCount));
+        }
+    }, []);
 
     const calcTotalAmount = cartList.reduce((total, item) => {
         return total + item.price;

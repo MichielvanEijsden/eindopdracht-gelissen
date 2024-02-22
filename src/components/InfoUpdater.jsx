@@ -1,5 +1,4 @@
 import axios from "axios";
-
 function InfoUpdater(cartList,favList) {
     const token = localStorage.getItem('token')
 
