@@ -105,23 +105,23 @@
         margin: 1rem;
     }
 
-    .time-table-container {
+    .side-menu-container {
         left: 10vw;
         width: 80vw;
         margin: -1rem;
     }
-    .time-table{
+    .side-menu{
         width: 80vw;
         display: flex;
         padding: 0 2rem;
     }
-    .time-table-text{
+    .side-menu-text{
         width: 27vw;
         font-size: 15px;
         margin-bottom: 0.1rem;
         padding: 1rem;
     }
-    .day{
+    .section{
         margin: 0.5rem;
     }
 }
