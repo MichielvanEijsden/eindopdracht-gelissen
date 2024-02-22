@@ -27,7 +27,6 @@ function Products() {
                 toggleLoading(false)
             }
         }
-
         fetchProducts()
 
         return function cleanup() {
@@ -57,21 +56,21 @@ function Products() {
                                     <span>
                                         <span>
                                             <FavButton
-                                            key={oneProduct.id}
-                                            id={oneProduct.id}
-                                            title={oneProduct.title}
-                                            img={oneProduct.img}
-                                            category={oneProduct.category}
-                                            des={oneProduct.description}
-                                            price={oneProduct.price}
+                                                key={oneProduct.id}
+                                                id={oneProduct.id}
+                                                title={oneProduct.title}
+                                                img={oneProduct.img}
+                                                category={oneProduct.category}
+                                                des={oneProduct.description}
+                                                price={oneProduct.price}
                                             />
                                             <CartButton
-                                            id={oneProduct.id}
-                                            img={oneProduct.img}
-                                            title={oneProduct.title}
-                                            category={oneProduct.category}
-                                            des={oneProduct.description}
-                                            price={oneProduct.price}
+                                                id={oneProduct.id}
+                                                img={oneProduct.img}
+                                                title={oneProduct.title}
+                                                category={oneProduct.category}
+                                                des={oneProduct.description}
+                                                price={oneProduct.price}
                                             />
                                         </span>
                                     </span>

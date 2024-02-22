@@ -1,33 +1,34 @@
-
 import {useContext, useEffect, useState} from "react";
-// import {CartContext} from "../context/CartContext.jsx";
+import {CartContext} from "../context/CartContext.jsx";
+
+function CartCounter({totalAmount,setTotalAmount,price,itemId}) {
 
 
-function CartCounter(prop) {
-    // const {count,addCount,minusCount,totalPrice} =useContext(CartContext)
     const [count, setCount] = useState(1);
-    const [totalPrice,setTotalPrice] = useState(0)
+    const {cartList} = useContext(CartContext)
+    const productPrice =(price*count).toFixed(2)
+    console.log('prijs',price)
+    console.log('cc totalAmount: ',totalAmount)
+
+    const calcTotalAmount = cartList.reduce((total, item) => {
+        return total + item.price;
+    }, 0).toFixed(2);
+
+    useEffect(() => {
+        setTotalAmount(calcTotalAmount)
+    }, []);
+
     const addCount = () => {
         setCount(prevCount => prevCount + 1);
+        setTotalAmount(parseFloat(totalAmount)+parseFloat(price))
     };
 
     const minusCount = () => {
         if (count > 1) {
             setCount(prevCount => prevCount - 1);
+            setTotalAmount(parseFloat(totalAmount)-parseFloat(price))
         }
     };
-
-    const price=prop.price * count
-    price.toFixed(2)
-    useEffect(() => {
-        setTotalPrice(price)
-
-    }, [count]);
-
-
-
-    console.log(totalPrice)
-
 
     return (
         <div className="counter">
@@ -35,14 +36,10 @@ function CartCounter(prop) {
             <p>{count}</p>
             <button className="btn counter-btn" onClick={addCount}>+</button>
             <div>
-            <p key={prop.itemId}>€{totalPrice}</p>
+            <p key={itemId}>€{productPrice}</p>
 
             </div>
         </div>
-
     );
-
 }
-
-
 export default CartCounter ;

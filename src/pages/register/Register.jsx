@@ -15,19 +15,18 @@ function Register() {
         try {
             const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signup', {
                 ...data,
-                role:['user'],
-                info: cartlist,favlist,
+                role: ['user'],
+                info: cartlist, favlist,
 
             })
             console.log('signup response', response.data)
         } catch (e) {
             setError(e.response.data.message)
             console.error(e);
-        }finally {
-            navigate('/Login')
+        } finally {
+            {error? navigate('/Login'):navigate('/Register')}
         }
     }
-
 
     return (
         <>
@@ -48,7 +47,7 @@ function Register() {
                                 {errors.username && <p className='login-error-message'>{errors.username.message}</p>}
                                 <label>Password:</label>
                                 <input type='password' {...register('password', {
-                                    minLength:{value: 6,message: 'wachtwoord moet minimaal 6 characters lang zijn'},
+                                    minLength: {value: 6, message: 'wachtwoord moet minimaal 6 characters lang zijn'},
                                     required: {
                                         value: true,
                                         message: 'vul je wachtwoord in'
@@ -61,18 +60,17 @@ function Register() {
                                         value: true,
                                         message: 'vul je wachtwoord in',
                                     },
-                                    validate :(value)=> value.includes('@') ||'Email moet een @ bevatten',
+                                    validate: (value) => value.includes('@') || 'Email moet een @ bevatten',
                                 })} />
                                 {errors.email && <p className='login-error-message'>{errors.email.message}</p>}
-
                                 <button className='btn login-btn' type='submit'>Registreer</button>
                             </form>
-
                         </div>
                     </section>
                 </div>
             </div>
-            </>
+        </>
     )
 }
+
 export default Register

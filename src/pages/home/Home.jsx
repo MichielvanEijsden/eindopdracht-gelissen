@@ -22,7 +22,7 @@ function Home() {
                                 <img id='leaseFiets' src={leasefiets} alt='leasefiets-img'/>
                                 </span>
                                 <h1>Bikkel E-Bike ANWB Test **** sterren</h1>
-                               <Gallery/>
+                                <Gallery/>
 
                                 <div className='home-info-assortiment'>
                                     <Link to='/Webshop'>
@@ -89,7 +89,7 @@ function Home() {
                 </div>
             </div>
         </>
-)
+    )
 }
 
 export default Home

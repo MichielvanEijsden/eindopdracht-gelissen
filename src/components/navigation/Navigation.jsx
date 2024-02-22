@@ -6,7 +6,6 @@ import bars from '../../assets/bars-solid.svg'
 import cross from '../../assets/xmark-solid.svg'
 import {AuthContext} from "../../context/AuthContext.jsx";
 
-
 function Navigation() {
     const [toggleMenu, setToggleMenu] = useState(false)
     const [subMenu, setSubMenu] = useState(false)
@@ -14,7 +13,6 @@ function Navigation() {
 
     function Menu() {
         return (
-
             <>
                 <li><NavLink className={({isActive}) => isActive ? 'active-link' : 'default-link'}
                              to='/' onClick={() => setToggleMenu(false)}>Home</NavLink>
@@ -66,7 +64,6 @@ function Navigation() {
                 <li><NavLink className={({isActive}) => isActive ? "active-link" : "default-link"} to='/Privacy-policy'
                              onClick={() => setSubMenu(false) & setToggleMenu(false)}>Privacy policy</NavLink></li>
             </ul>
-
         </>
     )}
     return (
@@ -76,7 +73,6 @@ function Navigation() {
                     <ul className='nav-bar-menu'>
                         <Menu/>
                     </ul>
-
                     <div className='nav-button-container'>
                         {toggleMenu ? <img className='nav-button-img' src={cross} alt='cross'
                                            onClick={() => setToggleMenu(false)}/> :
@@ -89,9 +85,7 @@ function Navigation() {
                         )}
                     </div>
                 </nav>
-
             </section>
-
         </>
     )
 }
