@@ -19,15 +19,12 @@ function Login() {
             const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin', {
                 ...data,
             })
-            console.log(response.data)
-
             logIn(response.data.accessToken)
+            navigate('/Webshop')
         } catch (e) {
             setError(e.message)
             console.error(e.message)
-
         } finally {
-            {error ? navigate('/Webshop') : navigate('/Login')}
             toggleLoading(false)
         }
     }

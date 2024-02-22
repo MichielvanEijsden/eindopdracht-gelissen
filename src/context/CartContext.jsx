@@ -24,7 +24,6 @@ function CartContextProvider({children}) {
                     Authorization: `Bearer ${token}`
                 },
             })
-            // console.log('get info result',response.data.info)
             const data = JSON.parse(response.data.info)
             setCartList(data[0])
         } catch (e) {
@@ -32,7 +31,6 @@ function CartContextProvider({children}) {
         }
     }
 
-    // console.log('init cart',cartList)
     const addToCart = (product) => {
         setCartList([...cartList, product]);
     };

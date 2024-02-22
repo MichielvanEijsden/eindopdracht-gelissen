@@ -6,7 +6,7 @@ function isTokenValid(token){
 
     const validTime = decoded.iat
     const expTime = decoded.exp
-    console.log(validTime,expTime)
+
     if (expTime > validTime){
         return true;
     }else {

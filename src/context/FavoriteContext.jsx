@@ -26,9 +26,7 @@ function FavoriteContextProvider({children}) {
                     Authorization: `Bearer ${token}`
                 },
             })
-            // console.log('get info result',response.data)
             const data = JSON.parse(response.data.info)
-            console.log('get Data',data)
             setCarList(data[0])
             setFavList(data[1])
         }catch (e){
@@ -42,7 +40,6 @@ function FavoriteContextProvider({children}) {
     updater()
     }, [favList,cartList]);
 
-    // console.log('init fav',favList)
     const addFavorite = (product) => {
         setFavList([...favList, product]);
     };
