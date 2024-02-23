@@ -30,9 +30,9 @@ function Cart() {
                                                 <li key={items.id}>
                                                     <div className='section-background'>
                                                         <div className='product-info '>
-                                                <span>
-                                                <img className='product-img' src={items.img} alt={items.title}/>
-                                                </span>
+                                                            <span>
+                                                            <img className='product-img' src={items.img} alt={items.title}/>
+                                                            </span>
                                                             <div className='product-text'>
                                                                 <h3>{items.title}
                                                                 </h3>
@@ -83,6 +83,9 @@ function Cart() {
                                     <div className='section'>
                                         <div className='side-menu-text'><p>Totaal:</p></div>
                                         <div className='side-menu-text r'><p>{cartList.length? <p>€{total}</p> : <p>€0,00</p>} </p></div>
+                                    <div className='section'>
+                                        <button className='btn order-btn' onClick={()=> navigate('/Order')}>Bestellen</button>
+                                    </div>
                                     </div>
                                 </div>
                             </div>

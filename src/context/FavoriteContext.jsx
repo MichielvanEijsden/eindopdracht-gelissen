@@ -8,7 +8,7 @@ export const FavoriteContext = createContext({})
 
 function FavoriteContextProvider({children}) {
     const { auth } = useContext(AuthContext);
-    const {cartList,setCarList} = useContext(CartContext)
+    const {cartList} = useContext(CartContext)
     const [favList, setFavList] = useState([])
     const token = localStorage.getItem('token')
 
@@ -27,12 +27,12 @@ function FavoriteContextProvider({children}) {
                 },
             })
             const data = JSON.parse(response.data.info)
-            setCarList(data[0])
             setFavList(data[1])
         }catch (e){
             console.error(e)
         }
     }
+
     useEffect(() => {
     function updater() {
         Handler(cartList, favList)
