@@ -73,7 +73,9 @@
     background-color: #415050;
     width: 8vw;
 }
-
+.r{
+    justify-content: flex-end;
+}
 #side-menu-container {
     background-color: var(--page-container);
 }

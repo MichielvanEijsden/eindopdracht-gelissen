@@ -50,7 +50,9 @@
 }
 .in-cart{
     background-color: #1c1c1c;
+    border: none;
 }
 .out-cart{
     background-color: var(--btn-background);
+    border: none;
 }
