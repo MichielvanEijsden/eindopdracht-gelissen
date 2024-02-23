@@ -1,4 +1,5 @@
 import './Cart.css'
+import delbtn from '../../assets/fa6-regular-trash-can.svg'
 import {useContext, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext.jsx";
@@ -9,8 +10,11 @@ import CartCounter from "../../helpers/CartCounter.jsx";
 function Cart() {
     const {cartList} = useContext(CartContext)
     const {auth} = useContext(AuthContext)
+    const {removeFromCart} = useContext(CartContext)
     const navigate = useNavigate()
     const [totalAmount, setTotalAmount] = useState(0)
+    const sendCost = 6.95
+    const total = (parseFloat(totalAmount) + sendCost).toFixed(2)
 
     return (
         <>
@@ -26,9 +30,9 @@ function Cart() {
                                                 <li key={items.id}>
                                                     <div className='section-background'>
                                                         <div className='product-info '>
-                                                <span>
-                                                <img className='product-img' src={items.img} alt={items.title}/>
-                                                </span>
+                                                            <span>
+                                                            <img className='product-img' src={items.img} alt={items.title}/>
+                                                            </span>
                                                             <div className='product-text'>
                                                                 <h3>{items.title}
                                                                 </h3>
@@ -49,8 +53,12 @@ function Cart() {
                                                                 price={items.price}
                                                                 totalAmount={totalAmount}
                                                                 setTotalAmount={setTotalAmount}
-
                                                             />
+                                                            <div>
+                                                            <button className='btn remove-btn'>
+                                                                <img className='remove-icon' onClick={() =>removeFromCart(items.id)} src={delbtn} alt="del-btn"/>
+                                                            </button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </li>)
@@ -59,14 +67,25 @@ function Cart() {
                                 </div>
                             </section>
                         </div>
-                        <div className='side-menu-container'>
-                            <div id='side-menu-container'>
-                                <h2>Overzicht</h2>
-                                <div className='side-menu'>
+                    </div>
+                    <div className='side-menu-container'>
+                        <div id='side-menu-container'>
+                            <h2>Overzicht</h2>
+                            <div className='side-menu'>
+                                <div className='section'>
+                                    <div className='side-menu-text'><p>artikelen({cartList.length})</p></div>
+                                    <div className='side-menu-text r'><p> €{parseFloat(totalAmount).toFixed(2)}</p>
+                                    </div>
                                     <div className='section'>
-                                        <div className='side-menu-text'><p>artikelen({cartList.length})</p></div>
-                                        <div className='side-menu-text'><p> €{parseFloat(totalAmount).toFixed(2)}</p>
-                                        </div>
+                                        <div className='side-menu-text'><p>verzendkosten:</p></div>
+                                        <div className='side-menu-text r'><p>{cartList.length? <p>€{sendCost}</p> : <p>€0,00</p>} </p></div>
+                                    </div>
+                                    <div className='section'>
+                                        <div className='side-menu-text'><p>Totaal:</p></div>
+                                        <div className='side-menu-text r'><p>{cartList.length? <p>€{total}</p> : <p>€0,00</p>} </p></div>
+                                    <div className='section'>
+                                        <button className='btn order-btn' onClick={()=> navigate('/Order')}>Bestellen</button>
+                                    </div>
                                     </div>
                                 </div>
                             </div>

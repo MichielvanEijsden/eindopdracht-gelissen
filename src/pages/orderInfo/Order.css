@@ -1,0 +1,25 @@
+.order-form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.order-form label{
+    margin:30px;
+    font-size: 20px;
+}
+.order-form select{
+    font-size: 17px;
+}
+.list{
+    display: flex;
+    align-items: flex-start;
+}
+.list input{
+    text-align: center;
+    margin: 10px;
+}
+.order-form-line{
+    display: flex;
+    justify-content: flex-start;
+    text-align: right;
+}

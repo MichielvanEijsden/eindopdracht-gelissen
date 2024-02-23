@@ -17,7 +17,7 @@ import Products from "./pages/products/Products.jsx";
 import Cart from "./pages/cart/Cart.jsx";
 import Login from "./pages/login/login.jsx";
 import Register from "./pages/register/Register.jsx";
-
+import Order from './pages/orderInfo/Order.jsx'
 
 function App() {
 
@@ -41,6 +41,7 @@ function App() {
         <Route path='/Login' element={<Login/>}/>
         <Route path='/Register' element={<Register/>}/>
         <Route path="*" element={<ErrorPage/>}/>
+        <Route path='/Order' element={<Order/>}/>
       </Routes>
       <Footer/>
     </>
